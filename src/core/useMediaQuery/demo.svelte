@@ -5,14 +5,11 @@
 	const prefersDark = useMediaQuery('(prefers-color-scheme: dark)');
 </script>
 
-<div>
-	<h2 class="font-bold">useMediaQuery</h2>
-	<ul class="ml-2">
-		<li>
-			<p>isLargeScreen: {isLargeScreen.value}</p>
-		</li>
-		<li>
-			<p>prefersDark: {prefersDark.value}</p>
-		</li>
-	</ul>
+<div class="p-4 border-2 border-stone-300 rounded-md">
+	<h2 class="font-bold text-lg">useMediaQuery</h2>
+
+	<div class="ml-2 mt-2">
+		<p>isLargeScreen: {isLargeScreen.value}</p>
+		<p>prefersDark: {prefersDark.value}</p>
+	</div>
 </div>

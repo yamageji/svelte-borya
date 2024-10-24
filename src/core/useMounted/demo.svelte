@@ -4,7 +4,10 @@
 	const isMounted = useMounted();
 </script>
 
-<div>
-	<h2 class="font-bold">useMounted</h2>
-	<p class="ml-2">isMounted: {isMounted ? 'mounted' : 'unmounted'}</p>
+<div class="p-4 border-2 border-stone-300 rounded-md">
+	<h2 class="font-bold text-lg">useMounted</h2>
+
+	<div class="ml-2 mt-2">
+		<p>isMounted: {isMounted ? 'mounted' : 'unmounted'}</p>
+	</div>
 </div>
