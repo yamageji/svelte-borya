@@ -4,4 +4,7 @@
 	const isMounted = useMounted();
 </script>
 
-<span>{isMounted ? 'mounted' : 'unmounted'}</span>
+<div>
+	<h2 class="font-bold">useMounted</h2>
+	<p class="ml-2">isMounted: {isMounted ? 'mounted' : 'unmounted'}</p>
+</div>
