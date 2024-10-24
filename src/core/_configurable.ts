@@ -1,23 +1,23 @@
 import { isClient } from '../shared';
 
 export interface ConfigurableWindow {
-	window?: Window;
+  window?: Window;
 }
 
 export interface ConfigurableDocument {
-	document?: Document;
+  document?: Document;
 }
 
 export interface ConfigurableDocumentOrShadowRoot {
-	document?: DocumentOrShadowRoot;
+  document?: DocumentOrShadowRoot;
 }
 
 export interface ConfigurableNavigator {
-	navigator?: Navigator;
+  navigator?: Navigator;
 }
 
 export interface ConfigurableLocation {
-	location?: Location;
+  location?: Location;
 }
 
 export const defaultWindow = /* #__PURE__ */ isClient ? window : undefined;

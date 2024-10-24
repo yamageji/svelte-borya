@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { useMounted } from './index.svelte';
+  import { useMounted } from './index.svelte';
 
-	const isMounted = useMounted();
+  const isMounted = useMounted();
 </script>
 
-<div class="p-4 border-2 border-stone-300 rounded-md">
-	<h2 class="font-bold text-lg">useMounted</h2>
+<div class="rounded-md border-2 border-stone-300 p-4">
+  <h2 class="text-lg font-bold">useMounted</h2>
 
-	<div class="ml-2 mt-2">
-		<p>isMounted: {isMounted ? 'mounted' : 'unmounted'}</p>
-	</div>
+  <div class="ml-2 mt-2">
+    <p>isMounted: {isMounted ? 'mounted' : 'unmounted'}</p>
+  </div>
 </div>
