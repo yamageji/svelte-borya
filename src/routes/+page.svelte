@@ -2,6 +2,7 @@
   import UseMounted from '../core/useMounted/demo.svelte';
   import UseMediaQuery from '../core/useMediaQuery/demo.svelte';
   import UsePreferredDark from '../core/usePreferredDark/demo.svelte';
+  import UseEventListener from '../core/useEventListener/demo.svelte';
 </script>
 
 <h1 class="mb-6 text-2xl font-bold">Svelte Borya</h1>
@@ -10,4 +11,5 @@
   <UseMounted />
   <UseMediaQuery />
   <UsePreferredDark />
+  <UseEventListener />
 </div>
