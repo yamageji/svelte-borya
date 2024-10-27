@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { onDestroy, onMount } from 'svelte';
+import { onMount } from 'svelte';
 import type { Arrayable, Fn, MaybeGetter } from '../../shared';
 import { isObject, noop } from '../../shared';
 import { defaultWindow } from '../_configurable';
@@ -18,14 +18,7 @@ export interface GeneralEventListener<E = Event> {
 }
 
 /**
- * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
- *
  * Overload 1: Omitted Window target
- *
- * @see https://vueuse.org/useEventListener
- * @param event
- * @param listener
- * @param options
  */
 export function useEventListener<E extends keyof WindowEventMap>(
   event: Arrayable<E>,
@@ -34,15 +27,7 @@ export function useEventListener<E extends keyof WindowEventMap>(
 ): Fn;
 
 /**
- * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
- *
  * Overload 2: Explicitly Window target
- *
- * @see https://vueuse.org/useEventListener
- * @param target
- * @param event
- * @param listener
- * @param options
  */
 export function useEventListener<E extends keyof WindowEventMap>(
   target: Window,
@@ -52,15 +37,7 @@ export function useEventListener<E extends keyof WindowEventMap>(
 ): Fn;
 
 /**
- * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
- *
  * Overload 3: Explicitly Document target
- *
- * @see https://vueuse.org/useEventListener
- * @param target
- * @param event
- * @param listener
- * @param options
  */
 export function useEventListener<E extends keyof DocumentEventMap>(
   target: DocumentOrShadowRoot,
@@ -70,15 +47,7 @@ export function useEventListener<E extends keyof DocumentEventMap>(
 ): Fn;
 
 /**
- * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
- *
  * Overload 4: Explicitly HTMLElement target
- *
- * @see https://vueuse.org/useEventListener
- * @param target
- * @param event
- * @param listener
- * @param options
  */
 export function useEventListener<E extends keyof HTMLElementEventMap>(
   target: MaybeGetter<HTMLElement | null | undefined>,
@@ -88,15 +57,7 @@ export function useEventListener<E extends keyof HTMLElementEventMap>(
 ): () => void;
 
 /**
- * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
- *
  * Overload 5: Custom event target with event type infer
- *
- * @see https://vueuse.org/useEventListener
- * @param target
- * @param event
- * @param listener
- * @param options
  */
 export function useEventListener<Names extends string, EventType = Event>(
   target: MaybeGetter<InferEventTarget<Names> | null | undefined>,
@@ -106,15 +67,7 @@ export function useEventListener<Names extends string, EventType = Event>(
 ): Fn;
 
 /**
- * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
- *
  * Overload 6: Custom event target fallback
- *
- * @see https://vueuse.org/useEventListener
- * @param target
- * @param event
- * @param listener
- * @param options
  */
 export function useEventListener<EventType = Event>(
   target: MaybeGetter<EventTarget | null | undefined>,
@@ -153,25 +106,30 @@ export function useEventListener(...args: any[]) {
   };
 
   const stopWatch = () => {
-    cleanup();
-    if (!target) return;
+    $effect(() => {
+      cleanup();
+      if (!target) return;
 
-    // create a clone of options, to avoid it being changed reactively on removal
-    const optionsClone = isObject(options) ? { ...options } : options;
-    cleanups.push(
-      ...(events as string[]).flatMap((event) => {
-        return (listeners as Function[]).map((listener) =>
-          register(target, event, listener, optionsClone)
-        );
-      })
-    );
+      // create a clone of options, to avoid it being changed reactively on removal
+      const optionsClone = isObject(options) ? { ...options } : options;
+      cleanups.push(
+        ...(events as string[]).flatMap((event) => {
+          return (listeners as Function[]).map((listener) =>
+            register(target, event, listener, optionsClone)
+          );
+        })
+      );
+    });
+  };
+
+  const stop = () => {
+    stopWatch();
+    cleanup();
   };
 
   onMount(() => {
-    stopWatch();
+    stop();
   });
-
-  onDestroy(stop);
 
   return {
     get value() {
