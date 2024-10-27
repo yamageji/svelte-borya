@@ -8,6 +8,6 @@
   <h2 class="text-lg font-bold">useMounted</h2>
 
   <div class="ml-2 mt-2">
-    <p>isMounted: {isMounted ? 'mounted' : 'unmounted'}</p>
+    <p>isMounted: {isMounted.value ? 'mounted' : 'unmounted'}</p>
   </div>
 </div>
