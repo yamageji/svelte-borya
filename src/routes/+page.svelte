@@ -5,6 +5,7 @@
   import UseEventListener from '../core/useEventListener/demo.svelte';
   import UseStorage from '../core/useStorage/demo.svelte';
   import UseLocalStorage from '../core/useLocalStorage/demo.svelte';
+  import UseSessionStorage from '../core/useSessionStorage/demo.svelte';
 </script>
 
 <h1 class="mb-6 text-2xl font-bold">Svelte Borya</h1>
@@ -16,4 +17,5 @@
   <UseEventListener />
   <UseStorage />
   <UseLocalStorage />
+  <UseSessionStorage />
 </div>
