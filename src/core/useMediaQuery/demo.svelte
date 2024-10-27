@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useMediaQuery } from '../useMediaQuery/index.svelte';
+  import { useMediaQuery } from './index.svelte';
 
   const isLargeScreen = useMediaQuery('(min-width: 1024px)');
   const prefersDark = useMediaQuery('(prefers-color-scheme: dark)');

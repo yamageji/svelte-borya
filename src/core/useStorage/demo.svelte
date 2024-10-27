@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { useStorage } from '../useStorage/index.svelte';
+  import { useStorage } from './index.svelte';
 
   const theDefault = 1;
-  const state1 = useStorage('svalte-borya-local-storage-1', theDefault);
-  const state2 = useStorage('svalte-borya-local-storag-2', false);
+  const state1 = useStorage('svalte-borya-storage-1', theDefault);
+  const state2 = useStorage('svalte-borya-storag-2', false);
 </script>
 
 <div class="rounded-md border-2 border-stone-300 p-4">
-  <h2 class="text-lg font-bold">useMounted</h2>
+  <h2 class="text-lg font-bold">useStorage</h2>
 
   <p lang="json">number: {state1.value}</p>
   <p lang="json">boolean: {state2.value}</p>
