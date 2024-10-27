@@ -7,3 +7,7 @@ export type AnyFn = (...args: any[]) => any;
 export type Arrayable<T> = T[] | T;
 
 export type MaybeGetter<T> = T | (() => T);
+
+export type Awaitable<T> = Promise<T> | T;
+
+export type Promisify<T> = Promise<Awaited<T>>;
