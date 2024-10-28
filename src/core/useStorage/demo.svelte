@@ -12,12 +12,12 @@
   <p lang="json">number: {state1.value}</p>
   <p lang="json">boolean: {state2.value}</p>
   <div class="mt-2">
-    <button onclick={() => (state1.value += 1)} class="rounded bg-slate-200 px-4 py-2"
+    <button onclick={() => (state1.value += 1)} class="rounded bg-stone-200 px-4 py-2"
       >Increment number</button
     >
   </div>
   <div class="mt-2">
-    <button onclick={() => (state2.value = !state2.value)} class="rounded bg-slate-200 px-4 py-2"
+    <button onclick={() => (state2.value = !state2.value)} class="rounded bg-stone-200 px-4 py-2"
       >toggle boolean</button
     >
   </div>

@@ -26,7 +26,7 @@
     <p></p>
   </div>
 
-  <div bind:this={divRef} class="mt-2 w-fit cursor-pointer rounded bg-slate-200 px-4 py-2">
+  <div bind:this={divRef} class="mt-2 w-fit cursor-pointer rounded bg-stone-200 px-4 py-2">
     toggle Click: {isClick}
   </div>
 </div>

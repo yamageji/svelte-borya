@@ -10,7 +10,7 @@
   <p lang="json">boolean: {state.value}</p>
 
   <div class="mt-2">
-    <button onclick={() => (state.value = !state.value)} class="rounded bg-slate-200 px-4 py-2"
+    <button onclick={() => (state.value = !state.value)} class="rounded bg-stone-200 px-4 py-2"
       >toggle boolean</button
     >
   </div>
