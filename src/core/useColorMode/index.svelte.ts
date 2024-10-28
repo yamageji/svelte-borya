@@ -1,12 +1,9 @@
 import { onMount } from 'svelte';
-import type { MaybeGetter } from '../../shared';
+import type { MaybeGetter, MaybeReactive } from '../../shared';
 import type { StorageLike } from '../ssr-handlers';
-// import type { MaybeElementRef } from '../unrefElement'
 import type { UseStorageOptions } from '../useStorage/index.svelte';
-// import { toRef } from '../../shared';
 import { defaultWindow } from '../_configurable';
 import { getSSRHandler } from '../ssr-handlers';
-// import { unrefElement } from '../unrefElement';
 import { usePreferredDark } from '../usePreferredDark/index.svelte';
 import { useStorage } from '../useStorage/index.svelte';
 
@@ -27,14 +24,14 @@ export interface UseColorModeOptions<T extends string = BasicColorMode>
   // storageRef?: MaybeGetter<T | BasicColorSchema>;
   storageKey?: string | null;
   storage?: StorageLike;
-  // emitAuto?: boolean;
+  emitAuto?: boolean;
   disableTransition?: boolean;
 }
 
 export type UseColorModeReturn<T extends string = BasicColorMode> =
-  | T
+  | MaybeReactive<T | BasicColorSchema>
   | (BasicColorSchema & {
-      store: T | BasicColorSchema;
+      store: { value: T | BasicColorSchema };
       system: BasicColorMode;
       state: T | BasicColorMode;
     });
@@ -54,7 +51,7 @@ export function useColorMode<T extends string = BasicColorMode>(
     storageKey = 'svelte-borya-color-scheme',
     listenToStorageChanges = true,
     // storageRef,
-    // emitAuto,
+    emitAuto,
     disableTransition = true
   } = options;
 
@@ -66,14 +63,14 @@ export function useColorMode<T extends string = BasicColorMode>(
   } as Record<BasicColorSchema | T, string>;
 
   const preferredDark = usePreferredDark({ window });
-  const system = $derived(preferredDark.value ? 'dark' : 'light');
+  const system = $derived<BasicColorMode>(preferredDark.value ? 'dark' : 'light');
 
-  const store = useStorage<T | BasicColorSchema>(storageKey, initialValue, storage, {
+  const store = useStorage(storageKey!, initialValue, storage, {
     window,
     listenToStorageChanges
-  }).value;
+  }) as { value: T | BasicColorSchema };
 
-  const state = $derived(store === 'auto' ? system : store);
+  const state = $derived<T | BasicColorMode>(store.value === 'auto' ? system : store.value);
 
   const updateHTMLAttrs = getSSRHandler('updateHTMLAttrs', (selector, attribute, value) => {
     const el =
@@ -147,7 +144,13 @@ export function useColorMode<T extends string = BasicColorMode>(
 
   return {
     get value() {
-      return Object.assign({ store, system, state }) as UseColorModeReturn<T>;
-    }
+      return emitAuto ? store.value : state;
+    },
+    set value(v: T) {
+      store.value = v;
+    },
+    store,
+    system,
+    state
   };
 }
