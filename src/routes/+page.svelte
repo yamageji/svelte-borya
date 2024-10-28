@@ -6,6 +6,7 @@
   import UseStorage from '../core/useStorage/demo.svelte';
   import UseLocalStorage from '../core/useLocalStorage/demo.svelte';
   import UseSessionStorage from '../core/useSessionStorage/demo.svelte';
+  import UseColorMode from '../core/useColorMode/demo.svelte';
 </script>
 
 <h1 class="mb-6 text-2xl font-bold">Svelte Borya</h1>
@@ -18,4 +19,5 @@
   <UseStorage />
   <UseLocalStorage />
   <UseSessionStorage />
+  <UseColorMode />
 </div>
