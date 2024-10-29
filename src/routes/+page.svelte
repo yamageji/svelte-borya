@@ -1,4 +1,5 @@
 <script lang="ts">
+  import UseDark from '../core/useDark/demo.svelte';
   import UseColorMode from '../core/useColorMode/demo.svelte';
   import UseMounted from '../core/useMounted/demo.svelte';
   import UseMediaQuery from '../core/useMediaQuery/demo.svelte';
@@ -12,6 +13,7 @@
 <h1 class="mb-6 text-2xl font-bold">Svelte Borya</h1>
 
 <div class="flex flex-col gap-4">
+  <UseDark />
   <UseColorMode />
   <UseMediaQuery />
   <UseMounted />
