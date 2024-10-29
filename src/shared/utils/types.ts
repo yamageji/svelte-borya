@@ -13,6 +13,6 @@ export type Awaitable<T> = Promise<T> | T;
 export type Promisify<T> = Promise<Awaited<T>>;
 
 export type MaybeReactive<T> = {
-  get: () => T;
+  get value(): () => T;
   set: (value: T | null | undefined) => void;
 };

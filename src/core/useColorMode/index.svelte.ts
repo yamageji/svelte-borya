@@ -1,5 +1,5 @@
 import { onMount } from 'svelte';
-import type { MaybeGetter, MaybeReactive } from '../../shared';
+import type { MaybeGetter } from '../../shared';
 import type { StorageLike } from '../ssr-handlers';
 import type { UseStorageOptions } from '../useStorage/index.svelte';
 import { defaultWindow } from '../_configurable';
@@ -28,13 +28,12 @@ export interface UseColorModeOptions<T extends string = BasicColorMode>
   disableTransition?: boolean;
 }
 
-export type UseColorModeReturn<T extends string = BasicColorMode> =
-  | MaybeReactive<T | BasicColorSchema>
-  | (BasicColorSchema & {
-      store: { value: T | BasicColorSchema };
-      system: BasicColorMode;
-      state: T | BasicColorMode;
-    });
+export type UseColorModeReturn<T extends string = BasicColorMode> = {
+  value: T | BasicColorSchema;
+  store: { value: T | BasicColorSchema };
+  system: BasicColorMode;
+  state: T | BasicColorMode;
+};
 
 const CSS_DISABLE_TRANS =
   '*,*::before,*::after{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}';
@@ -76,8 +75,10 @@ export function useColorMode<T extends string = BasicColorMode>(
     const el =
       typeof selector === 'string'
         ? window?.document.querySelector(selector)
-        : // : unrefElement(selector);
-          window?.document.querySelector('html');
+        : window?.document.querySelector('html');
+    // TODO: selector の実装ができたら以下のに差し替え
+    // : unrefElement(selector);
+
     if (!el) return;
 
     const classesToAdd = new Set<string>();
@@ -146,7 +147,7 @@ export function useColorMode<T extends string = BasicColorMode>(
     get value() {
       return emitAuto ? store.value : state;
     },
-    set value(v: T) {
+    set value(v: T | BasicColorSchema) {
       store.value = v;
     },
     store,
