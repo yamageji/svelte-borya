@@ -1,4 +1,4 @@
-SvelteBorya is an unofficial project aimed at reimplementing VueUse in Svelte 5.
+SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vueuse.org/) with [Svelte 5](https://svelte.dev/).
 > [!NOTE]
 > Please note that my primary purpose is for learning.
 
