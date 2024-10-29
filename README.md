@@ -32,7 +32,7 @@ SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vu
 - [x] useDark
 - [x] useEventListener
 - [ ] useEyeDropper
-- [ ] useFavicon
+- [x] useFavicon
 - [ ] useFileDialog
 - [ ] useFileSystemAccess
 - [ ] useFullscreen
