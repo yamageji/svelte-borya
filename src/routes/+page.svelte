@@ -1,4 +1,5 @@
 <script lang="ts">
+  import UseEyeDropper from '../core/useEyeDropper/demo.svelte';
   import UseFavicon from '../core/useFavicon/demo.svelte';
   import UseDark from '../core/useDark/demo.svelte';
   import UseColorMode from '../core/useColorMode/demo.svelte';
@@ -14,6 +15,7 @@
 <h1 class="mb-6 text-2xl font-bold">Svelte Borya</h1>
 
 <div class="flex flex-col gap-4">
+  <UseEyeDropper />
   <UseFavicon />
   <UseDark />
   <UseColorMode />
