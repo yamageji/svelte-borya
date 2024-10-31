@@ -31,7 +31,7 @@ SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vu
 - [ ] useCssVar
 - [x] useDark
 - [x] useEventListener
-- [ ] useEyeDropper
+- [x] useEyeDropper
 - [x] useFavicon
 - [ ] useFileDialog
 - [ ] useFileSystemAccess
@@ -82,6 +82,32 @@ SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vu
 - [ ] useVModel
 - [ ] useVModels
 
+### Utilities
+- [ ] createEventHook
+- [ ] createUnrefFn
+- [ ] get
+- [ ] isDefined
+- [ ] makeDestructurable
+- [ ] set
+- [ ] useAsyncQueue
+- [ ] useBase64
+- [ ] useCached
+- [ ] useCloned
+- [ ] useConfirmDialog
+- [ ] useCounter
+- [ ] useCycleList
+- [ ] useDebounceFn
+- [ ] useEventBus
+- [ ] useMemoize
+- [ ] useOffsetPagination
+- [ ] usePrevious
+- [ ] useStepper
+- [x] useSupported
+- [ ] useThrottleFn
+- [ ] useTimeoutPoll
+- [ ] useToggle
+- [ ] useToNumber
+- [ ] useToString
 
 ## Developing
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
