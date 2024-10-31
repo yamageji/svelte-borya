@@ -5,7 +5,7 @@
 </script>
 
 <div class="rounded-md border-2 border-stone-300 p-4">
-  <h2 class="text-lg font-bold">useEventListener</h2>
+  <h2 class="text-lg font-bold">useEyeDropper</h2>
 
   <div class="ml-2 mt-2 flex gap-8">
     <div>
