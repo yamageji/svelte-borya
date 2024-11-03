@@ -9,6 +9,7 @@
   import UsePreferredContrast from '../core/usePreferredContrast/demo.svelte';
   import UsePreferredDark from '../core/usePreferredDark/demo.svelte';
   import UsePreferredLanguages from '../core/usePreferredLanguages/demo.svelte';
+  import UsePreferredReducedMotion from '../core/usePreferredReducedMotion/demo.svelte';
   import UseEventListener from '../core/useEventListener/demo.svelte';
   import UseStorage from '../core/useStorage/demo.svelte';
   import UseLocalStorage from '../core/useLocalStorage/demo.svelte';
@@ -28,6 +29,7 @@
   <UsePreferredContrast />
   <UsePreferredDark />
   <UsePreferredLanguages />
+  <UsePreferredReducedMotion />
   <UseEventListener />
   <UseStorage />
   <UseLocalStorage />
