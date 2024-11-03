@@ -1,8 +1,10 @@
+import type { MaybeGetter } from '../../shared';
 import type { ConfigurableWindow } from '../_configurable';
+import { toValue } from '../../shared';
 import { defaultWindow } from '../_configurable';
 import { onDestroy, onMount } from 'svelte';
 
-export function useMediaQuery(query: string, options: ConfigurableWindow = {}) {
+export function useMediaQuery(query: MaybeGetter<string>, options: ConfigurableWindow = {}) {
   const { window = defaultWindow } = options;
   const isSupported = () =>
     window && 'matchMedia' in window && typeof window.matchMedia === 'function';
@@ -26,7 +28,7 @@ export function useMediaQuery(query: string, options: ConfigurableWindow = {}) {
 
     cleanup();
 
-    mediaQuery = window!.matchMedia(query);
+    mediaQuery = window!.matchMedia(toValue(query));
 
     if ('addEventListener' in mediaQuery) mediaQuery.addEventListener('change', handler);
     // @ts-expect-error deprecated API
