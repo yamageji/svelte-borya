@@ -11,9 +11,7 @@
   };
 </script>
 
-<div
-  class="rounded-md border-2 border-stone-300 p-4 dark:border-stone-950 dark:bg-stone-800 dark:text-stone-50"
->
+<div class="rounded-md border-2 border-stone-300 p-4">
   <h2 class="text-lg font-bold">useColorMode</h2>
 
   <div class="ml-2 mt-2">

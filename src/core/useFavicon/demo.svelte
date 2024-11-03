@@ -17,14 +17,14 @@
     <button
       type="button"
       onclick={() => (favicon.value = vueRogo)}
-      class="rounded bg-stone-700 px-4 py-2 text-stone-50 duration-200 hover:bg-stone-950 dark:bg-stone-200 dark:text-stone-950"
+      class="mt-2 rounded bg-stone-700 px-4 py-2 text-stone-50 duration-200 hover:bg-stone-950 dark:bg-stone-200 dark:text-stone-950 dark:hover:bg-white"
     >
       Vue
     </button>
     <button
       type="button"
       onclick={() => (favicon.value = svelteKitRogo)}
-      class="rounded bg-stone-700 px-4 py-2 text-stone-50 duration-200 hover:bg-stone-950 dark:bg-stone-200 dark:text-stone-950"
+      class="mt-2 rounded bg-stone-700 px-4 py-2 text-stone-50 duration-200 hover:bg-stone-950 dark:bg-stone-200 dark:text-stone-950 dark:hover:bg-white"
     >
       Svelte
     </button>
