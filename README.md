@@ -44,11 +44,11 @@ SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vu
 - [ ] useObjectUrl
 - [ ] usePerformanceObserver
 - [ ] usePermission
-- [ ] usePreferredColorScheme
-- [ ] usePreferredContrast
+- [x] usePreferredColorScheme
+- [x] usePreferredContrast
 - [x] usePreferredDark
-- [ ] usePreferredLanguages
-- [ ] usePreferredReducedMotion
+- [x] usePreferredLanguages
+- [x] usePreferredReducedMotion
 - [ ] useScreenOrientation
 - [ ] useScreenSafeArea
 - [ ] useScriptTag
