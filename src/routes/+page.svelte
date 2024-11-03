@@ -5,6 +5,7 @@
   import UseColorMode from '../core/useColorMode/demo.svelte';
   import UseMounted from '../core/useMounted/demo.svelte';
   import UseMediaQuery from '../core/useMediaQuery/demo.svelte';
+  import UsePreferredColorScheme from '../core/usePreferredColorScheme/demo.svelte';
   import UsePreferredDark from '../core/usePreferredDark/demo.svelte';
   import UseEventListener from '../core/useEventListener/demo.svelte';
   import UseStorage from '../core/useStorage/demo.svelte';
@@ -21,6 +22,7 @@
   <UseColorMode />
   <UseMediaQuery />
   <UseMounted />
+  <UsePreferredColorScheme />
   <UsePreferredDark />
   <UseEventListener />
   <UseStorage />
