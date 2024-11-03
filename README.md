@@ -23,7 +23,7 @@ SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vu
 
 ### Browser
 - [ ] useBluetooth
-- [ ] useBreakpoints
+- [x] useBreakpoints
 - [ ] useBroadcastChannel
 - [ ] useBrowserLocation
 - [ ] useClipboard
