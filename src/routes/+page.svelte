@@ -1,4 +1,5 @@
 <script lang="ts">
+  import UseClipboard from '../core/useClipboard/demo.svelte';
   import UsePermission from '../core/usePermission/demo.svelte';
   import UseTimeoutFn from '../shared/useTimeoutFn/demo.svelte';
   import UseBrowserLocation from '../core/useBrowserLocation/demo.svelte';
@@ -23,6 +24,7 @@
 <h1 class="mb-6 text-2xl font-bold">Svelte Borya</h1>
 
 <div class="flex flex-col gap-4">
+  <UseClipboard />
   <UsePermission />
   <UseTimeoutFn />
   <UseBrowserLocation />
