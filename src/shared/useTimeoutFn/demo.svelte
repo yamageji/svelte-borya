@@ -14,7 +14,7 @@
 </script>
 
 <div class="rounded-md border-2 border-stone-300 p-4">
-  <h2 class="text-lg font-bold">useColorMode</h2>
+  <h2 class="text-lg font-bold">useTimeoutFn</h2>
 
   <div>
     <p>{text}</p>
