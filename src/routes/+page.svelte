@@ -1,4 +1,5 @@
 <script lang="ts">
+  import UseBrowserLocation from '../core/useBrowserLocation/demo.svelte';
   import UseBreakpoints from '../core/useBreakpoints/demo.svelte';
   import UseEyeDropper from '../core/useEyeDropper/demo.svelte';
   import UseFavicon from '../core/useFavicon/demo.svelte';
@@ -20,6 +21,7 @@
 <h1 class="mb-6 text-2xl font-bold">Svelte Borya</h1>
 
 <div class="flex flex-col gap-4">
+  <UseBrowserLocation />
   <UseBreakpoints />
   <UseEyeDropper />
   <UseFavicon />
