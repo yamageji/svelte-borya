@@ -64,6 +64,16 @@ export function useBreakpoints<K extends string>(
     };
   }
 
+  function active() {
+    const currentItems = current();
+    const active = $derived(currentItems.value.length === 0 ? '' : currentItems.value.at(-1));
+    return {
+      get value() {
+        return active;
+      }
+    };
+  }
+
   return Object.assign(shortcutMethods, {
     greaterOrEqual,
     smallerOrEqual,
@@ -95,18 +105,7 @@ export function useBreakpoints<K extends string>(
       return match(`(min-width: ${getValue(a)}) and (max-width: ${getValue(b, -0.1)})`);
     },
     current,
-    active() {
-      const points = $state(
-        Object.keys(breakpoints).map((i) => [i, greaterOrEqual(i as K)] as const)
-      );
-      const current = $derived(points.filter(([, v]) => v.value).map(([k]) => k));
-      const active = $derived(current.length === 0 ? '' : current.at(-1));
-      return {
-        get value() {
-          return active;
-        }
-      };
-    }
+    active
   });
 }
 
