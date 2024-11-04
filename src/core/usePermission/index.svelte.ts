@@ -81,7 +81,6 @@ export function usePermission(
   });
 
   query();
-  console.log('state', state);
 
   if (controls) {
     return {
