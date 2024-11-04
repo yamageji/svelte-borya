@@ -12,3 +12,7 @@ export function increaseWithUnit(target: string | number, delta: number): string
   if (Number.isNaN(result)) return target;
   return result + unit;
 }
+
+export function objectEntries<T extends object>(obj: T) {
+  return Object.entries(obj) as Array<[keyof T, T[keyof T]]>;
+}

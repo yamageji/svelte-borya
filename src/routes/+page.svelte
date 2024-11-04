@@ -1,5 +1,6 @@
 <script lang="ts">
   import UseTimeoutFn from '../shared/useTimeoutFn/demo.svelte';
+  import UseBrowserLocation from '../core/useBrowserLocation/demo.svelte';
   import UseBreakpoints from '../core/useBreakpoints/demo.svelte';
   import UseEyeDropper from '../core/useEyeDropper/demo.svelte';
   import UseFavicon from '../core/useFavicon/demo.svelte';
@@ -22,6 +23,7 @@
 
 <div class="flex flex-col gap-4">
   <UseTimeoutFn />
+  <UseBrowserLocation />
   <UseBreakpoints />
   <UseEyeDropper />
   <UseFavicon />
