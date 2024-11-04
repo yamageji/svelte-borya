@@ -2,7 +2,6 @@
   import { useBrowserLocation } from './index.svelte';
 
   const location = useBrowserLocation();
-  console.log(location.value.state);
 </script>
 
 <div class="rounded-md border-2 border-stone-300 p-4">
