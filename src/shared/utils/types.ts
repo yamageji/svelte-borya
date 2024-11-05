@@ -16,3 +16,9 @@ export type MaybeReactive<T> = {
   get value(): () => T;
   set: (value: T | null | undefined) => void;
 };
+
+export interface Stoppable<StartFnArgs extends any[] = any[]> {
+  isPending: Readonly<boolean>;
+  stop: Fn;
+  start: (...args: StartFnArgs) => void;
+}
