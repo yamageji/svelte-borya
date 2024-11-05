@@ -26,8 +26,8 @@ SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vu
 - [x] useBreakpoints
 - [ ] useBroadcastChannel
 - [x] useBrowserLocation
-- [ ] useClipboard
-- [ ] useClipboardItems
+- [x] useClipboard
+- [x] useClipboardItems
 - [x] useColorMode
 - [ ] useCssVar
 - [x] useDark
@@ -44,7 +44,7 @@ SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vu
 - [ ] useMemory
 - [ ] useObjectUrl
 - [ ] usePerformanceObserver
-- [ ] usePermission
+- [x] usePermission
 - [x] usePreferredColorScheme
 - [x] usePreferredContrast
 - [x] usePreferredDark
@@ -64,6 +64,17 @@ SvelteBorya is an unofficial project aimed at reimplementing [VueUse](https://vu
 - [ ] useWebNotification
 - [ ] useWebWorker
 - [ ] useWebWorkerFn
+
+### Animation
+- [ ] useAnimate
+- [ ] useInterval
+- [ ] useIntervalFn
+- [ ] useNow
+- [ ] useRafFn
+- [ ] useTimeout
+- [x] useTimeoutFn
+- [ ] useTimestamp
+- [ ] useTransition
 
 ### Component
 - [ ] computedInject
