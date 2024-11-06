@@ -118,7 +118,7 @@ export function useStorage<T extends string | number | boolean | object | null>(
     listenToStorageChanges = true,
     writeDefaults = true,
     mergeDefaults = false,
-    // shallow,
+    shallow,
     window = defaultWindow,
     onError = (e) => {
       console.error(e);
@@ -127,6 +127,7 @@ export function useStorage<T extends string | number | boolean | object | null>(
   } = options;
 
   let data = $state(typeof defaults === 'function' ? defaults() : defaults) as T;
+  if (shallow) data = $state.snapshot(typeof defaults === 'function' ? defaults() : defaults) as T;
 
   if (!storage) {
     try {
@@ -220,11 +221,12 @@ export function useStorage<T extends string | number | boolean | object | null>(
 
     if (event && event.key !== key) return;
 
-    write(data);
     try {
       if (event?.newValue !== serializer.write(data)) data = read(event);
     } catch (e) {
       onError(e);
+    } finally {
+      $effect(() => write(data));
     }
   }
 
@@ -238,7 +240,6 @@ export function useStorage<T extends string | number | boolean | object | null>(
     },
     set value(v: T) {
       data = v;
-      write(v);
     }
   };
 }
