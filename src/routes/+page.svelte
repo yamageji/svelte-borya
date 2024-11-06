@@ -27,7 +27,7 @@
   // Utilities
 </script>
 
-<h1 class="mb-6 text-2xl font-bold">Svelte Borya</h1>
+<h1 class="mb-6 text-4xl font-bold">Svelte Borya</h1>
 
 <section>
   <h2 class="text-3xl font-bold">State</h2>
