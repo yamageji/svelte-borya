@@ -77,10 +77,19 @@ export function useBrowserLocation(options: ConfigurableWindow = {}) {
     search = window?.location?.search;
 
     return {
-      trigger,
-      state,
-      length,
-      origin,
+      get trigger() {
+        return trigger;
+      },
+      get state() {
+        return state;
+      },
+      get length() {
+        return length;
+      },
+      get origin() {
+        if (!origin) return '';
+        return origin;
+      },
       get hash() {
         if (!hash) return '';
         return hash;
@@ -151,11 +160,7 @@ export function useBrowserLocation(options: ConfigurableWindow = {}) {
     });
   }
 
-  return {
-    get value() {
-      return state;
-    }
-  };
+  return state;
 }
 
 export type UseBrowserLocationReturn = ReturnType<typeof useBrowserLocation>;
