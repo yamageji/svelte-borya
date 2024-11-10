@@ -9,6 +9,7 @@
   import UseClipboard from '../core/useClipboard/demo.svelte';
   import UseClipboardItems from '../core/useClipboardItems/demo.svelte';
   import UseColorMode from '../core/useColorMode/demo.svelte';
+  import UseCssVar from '../core/useCssVar/demo.svelte';
   import UseDark from '../core/useDark/demo.svelte';
   import UseEventListener from '../core/useEventListener/demo.svelte';
   import UseEyeDropper from '../core/useEyeDropper/demo.svelte';
@@ -46,6 +47,7 @@
     <UseClipboard />
     <UseClipboardItems />
     <UseColorMode />
+    <UseCssVar />
     <UseDark />
     <UseEventListener />
     <UseEyeDropper />
