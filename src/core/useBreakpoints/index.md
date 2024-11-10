@@ -17,9 +17,6 @@ TBA
 
 ```typescript
 export interface UseBreakpointsOptions extends ConfigurableWindow {
-  /**
-   * @default "min-width"
-   */
-  strategy?: 'min-width' | 'max-width';
+  strategy?: 'min-width' | 'max-width'; // default 'min-width'
 }
 ```
