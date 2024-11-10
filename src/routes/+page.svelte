@@ -41,22 +41,22 @@
 <section class="mt-10">
   <h2 class="text-3xl font-bold">Browser</h2>
   <div class="mt-4 grid gap-4 lg:grid-cols-2">
-    <UseClipboardItems />
-    <UseClipboard />
-    <UsePermission />
-    <UseBrowserLocation />
     <UseBreakpoints />
+    <UseBrowserLocation />
+    <UseClipboard />
+    <UseClipboardItems />
+    <UseColorMode />
+    <UseDark />
+    <UseEventListener />
     <UseEyeDropper />
     <UseFavicon />
-    <UseDark />
-    <UseColorMode />
     <UseMediaQuery />
+    <UsePermission />
     <UsePreferredColorScheme />
     <UsePreferredContrast />
     <UsePreferredDark />
     <UsePreferredLanguages />
     <UsePreferredReducedMotion />
-    <UseEventListener />
   </div>
 </section>
 
