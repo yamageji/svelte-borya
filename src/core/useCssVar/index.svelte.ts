@@ -2,7 +2,6 @@ import type { MaybeGetter } from '../../shared';
 import type { ConfigurableWindow } from '../_configurable';
 import { toValue } from '../../shared';
 import { defaultWindow } from '../_configurable';
-// import { useMutationObserver } from '../useMutationObserver';
 
 export interface UseCssVarOptions extends ConfigurableWindow {
   initialValue?: string;
@@ -11,11 +10,12 @@ export interface UseCssVarOptions extends ConfigurableWindow {
 
 export function useCssVar(
   prop: MaybeGetter<string | null | undefined>,
-  target?: HTMLElement | null,
+  target?: HTMLElement | SVGElement | undefined | null,
   options: UseCssVarOptions = {}
 ) {
-  const { window = defaultWindow, initialValue, observe = false } = options;
+  const { window = defaultWindow, initialValue } = options;
   let variable = $state<string | null | undefined>(initialValue);
+
   const elRef = target || window?.document?.documentElement;
 
   function updateCssVar() {
@@ -26,15 +26,8 @@ export function useCssVar(
     }
   }
 
-  // if (observe) {
-  //   useMutationObserver(elRef, updateCssVar, {
-  //     attributeFilter: ['style', 'class'],
-  //     window
-  //   });
-  // }
-
   $effect(() => {
-    if (elRef && toValue(prop)) updateCssVar();
+    if (prop) updateCssVar();
   });
 
   $effect(() => {
@@ -54,3 +47,5 @@ export function useCssVar(
     }
   };
 }
+
+export type UseCssVarReturn = ReturnType<typeof useCssVar>;

@@ -1,17 +1,26 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { useCssVar } from './index.svelte';
+  import type { UseCssVarReturn } from './index.svelte';
 
-  let el = null;
-  const cssVar = useCssVar('--color', el);
+  let el: HTMLDivElement;
+  let elv: HTMLDivElement;
+  let cssVar = $state<UseCssVarReturn>({ variable: null });
+  let colorVal = $state<UseCssVarReturn>({ variable: null });
+  let key = $state('--color');
+
+  onMount(() => {
+    $effect(() => {
+      cssVar = useCssVar('--color', el);
+      colorVal = useCssVar(key, elv);
+    });
+  });
 
   function switchColor() {
     if (cssVar.variable === '#df8543') cssVar.variable = '#7fa998';
     else cssVar.variable = '#df8543';
   }
 
-  let elv = null;
-  let key = $state('--color');
-  const colorVal = useCssVar(key, elv);
   function changeVar() {
     if (key === '--color') key = '--color-one';
     else key = '--color';
