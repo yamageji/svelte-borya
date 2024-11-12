@@ -9,6 +9,7 @@
   import UseClipboard from '../core/useClipboard/demo.svelte';
   import UseClipboardItems from '../core/useClipboardItems/demo.svelte';
   import UseColorMode from '../core/useColorMode/demo.svelte';
+  import UseCssVar from '../core/useCssVar/demo.svelte';
   import UseDark from '../core/useDark/demo.svelte';
   import UseEventListener from '../core/useEventListener/demo.svelte';
   import UseEyeDropper from '../core/useEyeDropper/demo.svelte';
@@ -41,22 +42,23 @@
 <section class="mt-10">
   <h2 class="text-3xl font-bold">Browser</h2>
   <div class="mt-4 grid gap-4 lg:grid-cols-2">
-    <UseClipboardItems />
-    <UseClipboard />
-    <UsePermission />
-    <UseBrowserLocation />
     <UseBreakpoints />
+    <UseBrowserLocation />
+    <UseClipboard />
+    <UseClipboardItems />
+    <UseColorMode />
+    <UseCssVar />
+    <UseDark />
+    <UseEventListener />
     <UseEyeDropper />
     <UseFavicon />
-    <UseDark />
-    <UseColorMode />
     <UseMediaQuery />
+    <UsePermission />
     <UsePreferredColorScheme />
     <UsePreferredContrast />
     <UsePreferredDark />
     <UsePreferredLanguages />
     <UsePreferredReducedMotion />
-    <UseEventListener />
   </div>
 </section>
 

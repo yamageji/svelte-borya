@@ -31,43 +31,35 @@ export function useBrowserLocation(options: ConfigurableWindow = {}) {
   let search = $state<string | undefined>('');
 
   $effect(() => {
-    if (!hash) return;
-    if (!window?.location || window.location['hash'] === hash) return;
+    if (!hash || !window || window.location['hash'] === hash) return;
     window.location['hash'] = hash;
   });
   $effect(() => {
-    if (!host) return;
-    if (!window?.location || window.location['host'] === host) return;
+    if (!host || !window || window.location['host'] === host) return;
     window.location['host'] = host;
   });
   $effect(() => {
-    if (!hostname) return;
-    if (!window?.location || window.location['hostname'] === hostname) return;
+    if (!hostname || !window || window.location['hostname'] === hostname) return;
     window.location['hostname'] = hostname;
   });
   $effect(() => {
-    if (!href) return;
-    if (!window?.location || window.location['href'] === href) return;
+    if (!href || !window || window.location['href'] === href) return;
     window.location['href'] = href;
   });
   $effect(() => {
-    if (!pathname) return;
-    if (!window?.location || window.location['pathname'] === pathname) return;
+    if (!pathname || !window || window.location['pathname'] === pathname) return;
     window.location['pathname'] = pathname;
   });
   $effect(() => {
-    if (!port) return;
-    if (!window?.location || window.location['port'] === port) return;
+    if (!port || !window || window.location['port'] === port) return;
     window.location['port'] = port;
   });
   $effect(() => {
-    if (!protocol) return;
-    if (!window?.location || window.location['protocol'] === protocol) return;
+    if (!protocol || !window || window.location['protocol'] === protocol) return;
     window.location['protocol'] = protocol;
   });
   $effect(() => {
-    if (!search) return;
-    if (!window?.location || window.location['search'] === search) return;
+    if (!search || !window || window.location['search'] === search) return;
     window.location['search'] = search;
   });
 
@@ -95,6 +87,7 @@ export function useBrowserLocation(options: ConfigurableWindow = {}) {
         return length;
       },
       get origin() {
+        if (!origin) return '';
         return origin;
       },
       get hash() {
@@ -167,11 +160,7 @@ export function useBrowserLocation(options: ConfigurableWindow = {}) {
     });
   }
 
-  return {
-    get value() {
-      return state;
-    }
-  };
+  return state;
 }
 
 export type UseBrowserLocationReturn = ReturnType<typeof useBrowserLocation>;
