@@ -1,30 +1,30 @@
 <script lang="ts">
   // State
-  import UseLocalStorage from '../core/useLocalStorage/demo.svelte';
-  import UseSessionStorage from '../core/useSessionStorage/demo.svelte';
-  import UseStorage from '../core/useStorage/demo.svelte';
+  import UseLocalStorage from '../lib/useLocalStorage/demo.svelte';
+  import UseSessionStorage from '../lib/useSessionStorage/demo.svelte';
+  import UseStorage from '../lib/useStorage/demo.svelte';
   // Browser
-  import UseBreakpoints from '../core/useBreakpoints/demo.svelte';
-  import UseBrowserLocation from '../core/useBrowserLocation/demo.svelte';
-  import UseClipboard from '../core/useClipboard/demo.svelte';
-  import UseClipboardItems from '../core/useClipboardItems/demo.svelte';
-  import UseColorMode from '../core/useColorMode/demo.svelte';
-  import UseCssVar from '../core/useCssVar/demo.svelte';
-  import UseDark from '../core/useDark/demo.svelte';
-  import UseEventListener from '../core/useEventListener/demo.svelte';
-  import UseEyeDropper from '../core/useEyeDropper/demo.svelte';
-  import UseFavicon from '../core/useFavicon/demo.svelte';
-  import UseMediaQuery from '../core/useMediaQuery/demo.svelte';
-  import UsePermission from '../core/usePermission/demo.svelte';
-  import UsePreferredColorScheme from '../core/usePreferredColorScheme/demo.svelte';
-  import UsePreferredContrast from '../core/usePreferredContrast/demo.svelte';
-  import UsePreferredDark from '../core/usePreferredDark/demo.svelte';
-  import UsePreferredLanguages from '../core/usePreferredLanguages/demo.svelte';
-  import UsePreferredReducedMotion from '../core/usePreferredReducedMotion/demo.svelte';
+  import UseBreakpoints from '../lib/useBreakpoints/demo.svelte';
+  import UseBrowserLocation from '../lib/useBrowserLocation/demo.svelte';
+  import UseClipboard from '../lib/useClipboard/demo.svelte';
+  import UseClipboardItems from '../lib/useClipboardItems/demo.svelte';
+  import UseColorMode from '../lib/useColorMode/demo.svelte';
+  import UseCssVar from '../lib/useCssVar/demo.svelte';
+  import UseDark from '../lib/useDark/demo.svelte';
+  import UseEventListener from '../lib/useEventListener/demo.svelte';
+  import UseEyeDropper from '../lib/useEyeDropper/demo.svelte';
+  import UseFavicon from '../lib/useFavicon/demo.svelte';
+  import UseMediaQuery from '../lib/useMediaQuery/demo.svelte';
+  import UsePermission from '../lib/usePermission/demo.svelte';
+  import UsePreferredColorScheme from '../lib/usePreferredColorScheme/demo.svelte';
+  import UsePreferredContrast from '../lib/usePreferredContrast/demo.svelte';
+  import UsePreferredDark from '../lib/usePreferredDark/demo.svelte';
+  import UsePreferredLanguages from '../lib/usePreferredLanguages/demo.svelte';
+  import UsePreferredReducedMotion from '../lib/usePreferredReducedMotion/demo.svelte';
   // Animation
   import UseTimeoutFn from '../shared/useTimeoutFn/demo.svelte';
   // Component
-  import UseMounted from '../core/useMounted/demo.svelte';
+  import UseMounted from '../lib/useMounted/demo.svelte';
   // Utilities
 </script>
 
