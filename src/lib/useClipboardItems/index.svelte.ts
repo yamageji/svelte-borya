@@ -1,6 +1,6 @@
-import type { MaybeGetter } from '../../shared';
+import type { MaybeGetter } from '$lib/shared';
 import type { ConfigurableNavigator } from '../_configurable';
-import { toValue, useTimeoutFn } from '../../shared';
+import { toValue, useTimeoutFn } from '$lib/shared';
 import { defaultNavigator } from '../_configurable';
 import { useEventListener } from '../useEventListener/index.svelte';
 import { useSupported } from '../useSupported/index.svelte';

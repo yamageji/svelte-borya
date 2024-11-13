@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { onMount } from 'svelte';
-import type { Arrayable, Fn, MaybeGetter } from '../../shared';
-import { isObject, noop } from '../../shared';
+import type { Arrayable, Fn, MaybeGetter } from '$lib/shared';
+import { isObject, noop } from '$lib/shared';
 import { defaultWindow } from '../_configurable';
 
 interface InferEventTarget<Events> {

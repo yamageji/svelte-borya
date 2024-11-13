@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useEyeDropper } from '../../lib/useEyeDropper/index.svelte';
+  import { useEyeDropper } from '$lib/useEyeDropper/index.svelte';
 
   const { isSupported, open, sRGBHex } = useEyeDropper({ initialValue: '#ffffff' });
 </script>

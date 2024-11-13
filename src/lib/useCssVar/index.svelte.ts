@@ -1,6 +1,6 @@
-import type { MaybeGetter } from '../../shared';
+import type { MaybeGetter } from '$lib/shared';
 import type { ConfigurableWindow } from '../_configurable';
-import { toValue } from '../../shared';
+import { toValue } from '$lib/shared';
 import { defaultWindow } from '../_configurable';
 
 export interface UseCssVarOptions extends ConfigurableWindow {

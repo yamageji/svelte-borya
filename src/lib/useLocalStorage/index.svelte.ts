@@ -1,4 +1,4 @@
-import type { MaybeGetter } from '../../shared';
+import type { MaybeGetter } from '$lib/shared';
 import type { UseStorageOptions } from '../useStorage/index.svelte';
 import { defaultWindow } from '../_configurable';
 import { useStorage } from '../useStorage/index.svelte';

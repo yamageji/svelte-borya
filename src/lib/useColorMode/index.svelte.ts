@@ -1,5 +1,5 @@
 import { onMount } from 'svelte';
-import type { MaybeGetter } from '../../shared';
+import type { MaybeGetter } from '$lib/shared';
 import type { StorageLike } from '../ssr-handlers';
 import type { UseStorageOptions } from '../useStorage/index.svelte';
 import { defaultWindow } from '../_configurable';

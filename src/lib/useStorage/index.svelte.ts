@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { onMount } from 'svelte';
-import type { Awaitable, ConfigurableEventFilter, MaybeGetter } from '../../shared';
+import type { Awaitable, ConfigurableEventFilter, MaybeGetter } from '$lib/shared';
 import type { ConfigurableWindow } from '../_configurable';
 import type { StorageLike } from '../ssr-handlers';
-import { toValue } from '../../shared';
+import { toValue } from '$lib/shared';
 import { defaultWindow } from '../_configurable';
 import { getSSRHandler } from '../ssr-handlers';
 import { useEventListener } from '../useEventListener/index.svelte';

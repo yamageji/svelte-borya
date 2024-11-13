@@ -1,5 +1,5 @@
 import type { ConfigurableNavigator } from '../_configurable';
-import { createSingletonPromise } from '../../shared';
+import { createSingletonPromise } from '$lib/shared';
 import { defaultNavigator } from '../_configurable';
 import { useEventListener } from '../useEventListener/index.svelte';
 

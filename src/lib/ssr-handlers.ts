@@ -1,4 +1,4 @@
-import type { Awaitable } from '../shared';
+import type { Awaitable } from './shared';
 
 export interface StorageLikeAsync {
   getItem: (key: string) => Awaitable<string | null>;

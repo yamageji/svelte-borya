@@ -10,8 +10,8 @@ TBA
 
 | Name       | Type       |  Default |
 | :--------- | :--------- | :---------- |
-| breakpoints | `Breakpoints<K>` | - |
-| options | `UseBreakpointsOptions` | {} |
+| breakpoints | `Breakpoints<K>` | `-` |
+| options | `UseBreakpointsOptions` | `{}` |
 
 ## Options
 

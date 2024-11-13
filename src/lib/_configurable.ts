@@ -1,4 +1,4 @@
-import { isClient } from '../shared';
+import { isClient } from './shared';
 
 export interface ConfigurableWindow {
   window?: Window;

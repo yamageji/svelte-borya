@@ -1,8 +1,8 @@
-import type { ConfigurableWindow } from '../../lib/_configurable';
-import type { MaybeGetter } from '../../shared';
-import { increaseWithUnit, toValue } from '../../shared';
-import { defaultWindow } from '../../lib/_configurable';
-import { useMediaQuery } from '../../lib/useMediaQuery/index.svelte';
+import type { ConfigurableWindow } from '$lib/_configurable';
+import type { MaybeGetter } from '$lib/shared';
+import { increaseWithUnit, toValue } from '$lib/shared';
+import { defaultWindow } from '$lib/_configurable';
+import { useMediaQuery } from '$lib/useMediaQuery/index.svelte';
 
 export * from './breakpoints';
 
