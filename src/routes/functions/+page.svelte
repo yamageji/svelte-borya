@@ -1,5 +1,7 @@
 <script lang="ts">
-  import Demo from '$lib/useBreakpoints/index.svx';
+  import Functions from './Functions.svx';
 </script>
 
-<Demo />
+<div>
+  <Functions />
+</div>

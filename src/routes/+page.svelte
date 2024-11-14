@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Introduction from '$components/site/pages/Introduction.svx';
+  import Introduction from './Introduction.svx';
 </script>
 
 <div>

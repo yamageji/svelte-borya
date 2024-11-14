@@ -3,7 +3,7 @@
 
   <nav class="flex items-center gap-6">
     <a href="/">Get Started</a>
-    <a href="/">Functions</a>
+    <a href="/functions">Functions</a>
     <a href="https://github.com/yamageji/svelte-borya">GitHub</a>
   </nav>
 </header>

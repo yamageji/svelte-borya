@@ -1,0 +1,7 @@
+# Introduction
+
+<style>
+  h1 {
+    @apply text-xl font-bold;
+  }
+</style>
