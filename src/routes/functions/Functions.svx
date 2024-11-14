@@ -1,29 +1,27 @@
 # Functions
 ## State
-- [UseLocalStorage](/functions/use-local-storage)
-- [UseSessionStorage](/functions/use-session-storage)
-- [UseStorage](/functions/use-storage)
+- [useLocalStorage](/functions/useLocalStorage)
+- [useSessionStorage](/functions/useSessionStorage)
+- [useStorage](/functions/useStorage)
 
 ## Browser
-- [UseBreakpoints](/functions/use-breakpoints)
-- [UseBrowserLocation](/functions/use-browser-location)
-- [UseClipboard](/functions/use-clipboard)
-- [UseClipboardItems](/functions/use-clipboard-items)
-- [UseColorMode](/functions/use-color-mode)
-- [UseCssVar](/functions/use-css-var)
-- [UseDark](/functions/use-dark)
-- [UseEventListener](/functions/use-event-listener)
-- [UseEyeDropper](/functions/use-eye-dropper)
-- [UseFavicon](/functions/use-favicon)
-- [UseMediaQuery](/functions/use-media-query)
-- [UsePermission](/functions/use-permission)
-- [UsePreferredColorScheme](/functions/use-preferred-color-scheme)
-- [UsePreferredContrast](/functions/use-preferred-contrast)
-- [UsePreferredDark](/functions/use-preferred-dark)
-- [UsePreferredLanguages](/functions/use-preferred-languages)
-- [UsePreferredReducedMotion](/functions/use-preferred-reduced-motion)
-
-
+- [useBreakpoints](/functions/useBreakpoints)
+- [useBrowserLocation](/functions/useBrowserLocation)
+- [useClipboard](/functions/useClipboard)
+- [useClipboardItems](/functions/useClipboardItems)
+- [useColorMode](/functions/useColorMode)
+- [useCssVar](/functions/useCssVar)
+- [useDark](/functions/useDark)
+- [useEventListener](/functions/useEventListener)
+- [useEyeDropper](/functions/useEyeDropper)
+- [useFavicon](/functions/useFavicon)
+- [useMediaQuery](/functions/useMediaQuery)
+- [usePermission](/functions/usePermission)
+- [usePreferredColorScheme](/functions/usePreferredColorScheme)
+- [usePreferredContrast](/functions/usePreferredContrast)
+- [usePreferredDark](/functions/usePreferredDark)
+- [usePreferredLanguages](/functions/usePreferredLanguages)
+- [usePreferredReducedMotion](/functions/usePreferredReducedMotion)
 
 <style>
   h1 {

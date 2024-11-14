@@ -10,4 +10,4 @@ TBA
 
 | Name       | Type       |  Default |
 | :--------- | :--------- | :---------- |
-| options | `ConfigurableWindow` | {} |
+| options | `ConfigurableWindow` | `{}` |

@@ -19,19 +19,15 @@
   const xxl = breakpoints.greater('2xl');
 </script>
 
-<div class="rounded-md border-2 border-stone-300 p-4">
-  <h2 class="text-lg font-bold">useBreakpoints</h2>
-
-  <div class="ml-2 mt-2">
-    <div>Current breakpoints: {current.value}</div>
-    <div>Active breakpoint: {active.value}</div>
-    <div>xs(&lt;{smWidth}px): {xs.value}</div>
-    <div>xs(&lt;={smWidth}px): {xse.value}</div>
-    <div>sm: {sm.value}</div>
-    <div>md: {md.value}</div>
-    <div>lg: {lg.value}</div>
-    <div>xl: {xl.value}</div>
-    <div>2xl: {xxl.value}</div>
-    <div>greaterThanBreakPoint: {isGreaterThanBreakpoint.value}</div>
-  </div>
+<div>
+  <div>Current breakpoints: {current.value}</div>
+  <div>Active breakpoint: {active.value}</div>
+  <div>xs(&lt;{smWidth}px): {xs.value}</div>
+  <div>xs(&lt;={smWidth}px): {xse.value}</div>
+  <div>sm: {sm.value}</div>
+  <div>md: {md.value}</div>
+  <div>lg: {lg.value}</div>
+  <div>xl: {xl.value}</div>
+  <div>2xl: {xxl.value}</div>
+  <div>greaterThanBreakPoint: {isGreaterThanBreakpoint.value}</div>
 </div>
