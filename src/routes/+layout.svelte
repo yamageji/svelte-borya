@@ -6,9 +6,9 @@
   let { children } = $props();
 </script>
 
-<div class="grid-rows-main mx-auto grid min-h-svh max-w-screen-lg">
+<div class="mx-auto grid min-h-svh max-w-screen-lg grid-rows-main">
   <Header />
-  <div class="px-6 dark:bg-stone-950 dark:text-stone-50">
+  <div class="px-6">
     {@render children()}
   </div>
   <Footer />

@@ -4,9 +4,9 @@
   let { children } = $props();
 </script>
 
-<div class="flex h-full w-full gap-10">
+<div class="mt-10 flex w-full gap-10">
   <Aside />
-  <main class="flex-grow pt-10">
+  <main class="flex-grow">
     {@render children()}
   </main>
 </div>

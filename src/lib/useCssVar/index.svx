@@ -10,9 +10,7 @@ TBA
 
 | Name       | Type       |  Default |
 | :--------- | :--------- | :---------- |
-| prop | MaybeGetter<string | null | undefined> | - |
-| target | HTMLElement | SVGElement | undefined | null | - |
-| options | UseCssVarOptions | `{}` |
+
 
 ## Options
 

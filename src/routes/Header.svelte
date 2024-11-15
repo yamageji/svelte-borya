@@ -1,4 +1,4 @@
-<header class="flex items-center justify-between gap-6 border-b border-b-stone-300 px-6 py-4">
+<header class="flex items-center justify-between gap-6 px-6 py-4">
   <div class="text-2xl font-bold">
     <a href="/">SvelteBorya</a>
   </div>
