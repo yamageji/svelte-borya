@@ -110,4 +110,16 @@
   .demo :global(h2) {
     @apply mb-3 mt-10 text-lg font-bold;
   }
+  .demo :global(pre) {
+    @apply rounded-md !bg-stone-100 p-6 text-sm leading-6 dark:!bg-stone-800;
+  }
+  .demo :global(code) {
+    @apply font-mono;
+  }
+  .demo :global(th) {
+    @apply border border-stone-300 p-2;
+  }
+  .demo :global(td) {
+    @apply border border-stone-300 p-2;
+  }
 </style>

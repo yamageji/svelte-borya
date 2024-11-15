@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Introduction from './Introduction.svx';
+  import Guide from './Guide.svx';
 </script>
 
 <main class="h-full pt-10">
-  <Introduction />
+  <Guide />
 </main>

@@ -4,8 +4,11 @@
   </div>
 
   <nav class="flex items-center gap-6">
-    <a href="/">Get Started</a>
+    <a href="/">Guide</a>
     <a href="/functions">Functions</a>
-    <a href="https://github.com/yamageji/svelte-borya">GitHub</a>
+    <a href="https://github.com/yamageji/svelte-borya" class="grid place-content-center">
+      <span class="hidden">github</span>
+      <span class="iconify mdi--github size-6"></span>
+    </a>
   </nav>
 </header>
