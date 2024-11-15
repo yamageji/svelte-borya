@@ -1,36 +1,7 @@
 # Functions
-## State
-- [useLocalStorage](/functions/useLocalStorage)
-- [useSessionStorage](/functions/useSessionStorage)
-- [useStorage](/functions/useStorage)
-
-## Browser
-- [useBreakpoints](/functions/useBreakpoints)
-- [useBrowserLocation](/functions/useBrowserLocation)
-- [useClipboard](/functions/useClipboard)
-- [useClipboardItems](/functions/useClipboardItems)
-- [useColorMode](/functions/useColorMode)
-- [useCssVar](/functions/useCssVar)
-- [useDark](/functions/useDark)
-- [useEventListener](/functions/useEventListener)
-- [useEyeDropper](/functions/useEyeDropper)
-- [useFavicon](/functions/useFavicon)
-- [useMediaQuery](/functions/useMediaQuery)
-- [usePermission](/functions/usePermission)
-- [usePreferredColorScheme](/functions/usePreferredColorScheme)
-- [usePreferredContrast](/functions/usePreferredContrast)
-- [usePreferredDark](/functions/usePreferredDark)
-- [usePreferredLanguages](/functions/usePreferredLanguages)
-- [usePreferredReducedMotion](/functions/usePreferredReducedMotion)
 
 <style>
   h1 {
     @apply text-xl font-bold;
-  }
-  h2 {
-    @apply text-lg font-bold mt-4;
-  }
-  li {
-    @apply mt-2;
   }
 </style>

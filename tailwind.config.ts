@@ -7,7 +7,11 @@ export default {
   darkMode: 'selector',
 
   theme: {
-    extend: {}
+    extend: {
+      gridTemplateRows: {
+        main: 'auto 1fr auto'
+      }
+    }
   },
 
   plugins: [containerQueries, aspectRatio]

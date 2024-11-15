@@ -2,6 +2,6 @@
   import Introduction from './Introduction.svx';
 </script>
 
-<div>
+<main class="h-full pt-10">
   <Introduction />
-</div>
+</main>

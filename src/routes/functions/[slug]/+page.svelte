@@ -8,30 +8,28 @@
   import UseClipboard from '$lib/useClipboard/index.svx';
   import UseClipboardDemo from '$lib/useClipboard/demo.svelte';
 
-  let { data } = $props();
+  const components = [
+    { slug: 'useBreakpoints', docs: UseBreakpoints, demo: UseBreakpointsDemo },
+    { slug: 'useBrowserLocation', docs: UseBrowserLocation, demo: UseBrowserLocationDemo },
+    { slug: 'useClipboard', docs: UseClipboard, demo: UseClipboardDemo }
+  ];
 
+  let { data } = $props();
   let Docs = $state<typeof SvelteComponent>();
   let Demo = $state<typeof SvelteComponent>();
 
-  const docsComponents = {
-    useBreakpoints: UseBreakpoints,
-    useBrowserLocation: UseBrowserLocation,
-    useClipboard: UseClipboard
-  };
-  const demoComponents = {
-    useBreakpoints: UseBreakpointsDemo,
-    useBrowserLocation: UseBrowserLocationDemo,
-    useClipboard: UseClipboardDemo
-  };
-
-  Docs = docsComponents[data.slug as keyof typeof docsComponents] as typeof SvelteComponent;
-  Demo = demoComponents[data.slug as keyof typeof demoComponents] as typeof SvelteComponent;
+  $effect(() => {
+    Docs = components.find((component) => component.slug === data.slug)
+      ?.docs as unknown as typeof SvelteComponent;
+    Demo = components.find((component) => component.slug === data.slug)
+      ?.demo as unknown as typeof SvelteComponent;
+  });
 </script>
 
 <div class="flex flex-col gap-8">
   {#if Docs}
-    <section>
-      <Docs />
+    <section class="demo">
+      <Docs class="demo" />
     </section>
   {/if}
 
@@ -46,4 +44,10 @@
 </div>
 
 <style>
+  .demo :global(h1) {
+    @apply mb-4 text-3xl font-bold;
+  }
+  .demo :global(h2) {
+    @apply mb-2 mt-6 text-lg font-bold;
+  }
 </style>

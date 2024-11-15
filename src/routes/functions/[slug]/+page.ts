@@ -1,5 +1,7 @@
 import type { EntryGenerator } from './$types';
 
+const slugList = ['useBreakpoints', 'useBrowserLocation', 'useClipboard'];
+
 export function load({ params }) {
   return {
     slug: params.slug
@@ -7,7 +9,7 @@ export function load({ params }) {
 }
 
 export const entries: EntryGenerator = () => {
-  return [{ slug: 'useBreakpoints' }, { slug: 'useBrowserLocation' }, { slug: 'useClipboard' }];
+  return slugList.map((slug) => ({ slug }));
 };
 
 export const prerender = true;
