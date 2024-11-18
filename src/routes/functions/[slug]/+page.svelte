@@ -88,15 +88,15 @@
 
 <div class="flex flex-col gap-8">
   {#if Docs}
-    <section class="demo">
-      <Docs class="demo" />
+    <section class="docs">
+      <Docs />
     </section>
   {/if}
 
   {#if Demo}
-    <section>
+    <section class="docs">
       <h2 class="text-lg font-bold">Demo</h2>
-      <div class="mt-4 rounded-md bg-stone-100 p-8 dark:bg-stone-800">
+      <div class="mt-4 rounded-md bg-white p-8 dark:bg-[#1E1E1E]">
         <Demo />
       </div>
     </section>
@@ -104,22 +104,24 @@
 </div>
 
 <style>
-  .demo :global(h1) {
-    @apply mb-4 text-3xl font-bold;
-  }
-  .demo :global(h2) {
-    @apply mb-3 mt-10 text-lg font-bold;
-  }
-  .demo :global(pre) {
-    @apply rounded-md !bg-stone-100 p-6 text-sm leading-6 dark:!bg-stone-800;
-  }
-  .demo :global(code) {
-    @apply font-mono;
-  }
-  .demo :global(th) {
-    @apply border border-stone-300 p-2;
-  }
-  .demo :global(td) {
-    @apply border border-stone-300 p-2;
+  .docs {
+    :global(h1) {
+      @apply mb-4 text-3xl font-bold;
+    }
+    :global(h2) {
+      @apply mb-3 mt-10 text-lg font-bold;
+    }
+    :global(pre) {
+      @apply w-full overflow-x-auto whitespace-pre rounded-md bg-neutral-100 p-6 text-sm leading-6 dark:bg-neutral-800;
+    }
+    :global(code) {
+      @apply whitespace-pre font-mono;
+    }
+    :global(th) {
+      @apply border border-neutral-300 p-2;
+    }
+    :global(td) {
+      @apply border border-neutral-300 p-2;
+    }
   }
 </style>

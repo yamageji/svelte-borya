@@ -29,7 +29,7 @@
   ];
 </script>
 
-<aside class="w-60 border-r border-stone-300 pr-4">
+<aside class="w-60 border-r border-neutral-300 pr-4">
   <h2 class="text-xl font-bold">Functions</h2>
   <ul>
     {#each list as { title, items }}
@@ -40,7 +40,7 @@
             <li class="ml-2">
               <a
                 href={`/functions/${item}`}
-                class="relative truncate text-stone-700 duration-150 before:absolute before:-left-2 before:mr-1.5 before:h-6 before:w-px before:duration-200 before:content-[''] hover:text-stone-950 hover:before:bg-stone-900 dark:text-stone-300 dark:hover:text-stone-100 dark:hover:before:bg-stone-300"
+                class="relative truncate text-neutral-700 duration-150 before:absolute before:-left-2 before:mr-1.5 before:h-6 before:w-px before:duration-200 before:content-[''] hover:text-neutral-950 hover:before:bg-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100 dark:hover:before:bg-neutral-300"
                 >{item}</a
               >
             </li>

@@ -12,6 +12,9 @@ module.exports = {
     extend: {
       gridTemplateRows: {
         main: 'auto 1fr auto'
+      },
+      gridTemplateColumns: {
+        functions: 'auto minmax(1px, 1fr)'
       }
     }
   },

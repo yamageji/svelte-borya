@@ -41,11 +41,11 @@
       <input
         bind:value={input}
         type="text"
-        class="mt-2 rounded-sm border border-stone-500 px-2.5 py-1 dark:border-stone-200 dark:bg-stone-900"
+        class="mt-2 rounded-sm border border-neutral-500 px-2.5 py-1 dark:border-neutral-200 dark:bg-neutral-900"
       />
       <button
         type="button"
-        class="mt-2 rounded bg-stone-700 px-4 py-2 text-stone-50 duration-200 hover:bg-stone-950 dark:bg-stone-200 dark:text-stone-950 dark:hover:bg-white"
+        class="mt-2 rounded bg-neutral-700 px-4 py-2 text-neutral-50 duration-200 hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
         onclick={() => clipboardItems.copy([createClipboardItems(input)])}
       >
         Copy

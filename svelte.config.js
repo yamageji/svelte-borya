@@ -3,7 +3,7 @@ import { createHighlighter } from 'shiki';
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-const theme = ['github-light', 'github-dark'];
+const theme = ['light-plus', 'dark-plus'];
 const highlighter = await createHighlighter({
   themes: theme,
   langs: ['javascript', 'typescript']
@@ -16,8 +16,8 @@ const mdsvexOptions = {
         highlighter.codeToHtml(code, {
           lang,
           themes: {
-            dark: 'github-dark',
-            light: 'github-light'
+            dark: 'dark-plus',
+            light: 'light-plus'
           }
         })
       );

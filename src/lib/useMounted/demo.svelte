@@ -4,7 +4,7 @@
   const isMounted = useMounted();
 </script>
 
-<div class="rounded-md border-2 border-stone-300 p-4">
+<div class="rounded-md border-2 border-neutral-300 p-4">
   <h2 class="text-lg font-bold">useMounted</h2>
 
   <div class="ml-2 mt-2">

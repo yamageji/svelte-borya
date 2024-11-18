@@ -10,7 +10,7 @@
     type="text"
     bind:value={location.hash}
     placeholder="Hash"
-    class="rounded-sm border border-stone-500 px-2.5 py-1 dark:border-stone-200 dark:bg-stone-900"
+    class="rounded-sm border border-neutral-500 px-2.5 py-1 dark:border-neutral-200 dark:bg-neutral-900"
   />
 </div>
 <div>

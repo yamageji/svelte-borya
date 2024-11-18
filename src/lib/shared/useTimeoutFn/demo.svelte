@@ -13,7 +13,7 @@
   }
 </script>
 
-<div class="rounded-md border-2 border-stone-300 p-4">
+<div class="rounded-md border-2 border-neutral-300 p-4">
   <h2 class="text-lg font-bold">useTimeoutFn</h2>
 
   <div>
@@ -21,8 +21,8 @@
     <p>isPending: {timeoutFn.isPending}</p>
     <button
       class={timeoutFn.isPending
-        ? 'mt-2 rounded bg-stone-200 px-4 py-2 text-stone-500 duration-200  dark:bg-stone-800 dark:text-stone-500'
-        : 'mt-2 rounded bg-stone-700 px-4 py-2 text-stone-50 duration-200 hover:bg-stone-950 dark:bg-stone-200 dark:text-stone-950 dark:hover:bg-white'}
+        ? 'mt-2 rounded bg-neutral-200 px-4 py-2 text-neutral-500 duration-200  dark:bg-neutral-800 dark:text-neutral-500'
+        : 'mt-2 rounded bg-neutral-700 px-4 py-2 text-neutral-50 duration-200 hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white'}
       onclick={restart}
     >
       Restart

@@ -12,7 +12,7 @@
         <p class="flex items-center gap-1">
           <span>sRGBHex:</span>
           <span
-            class="h-3.5 w-3.5 rounded-full border border-stone-300"
+            class="h-3.5 w-3.5 rounded-full border border-neutral-300"
             style:background-color={sRGBHex.value}
           ></span>
           <span>{sRGBHex.value}</span>
@@ -21,7 +21,7 @@
           type="button"
           disabled={!isSupported.value}
           onclick={() => open()}
-          class="mt-2 rounded bg-stone-700 px-4 py-2 text-stone-50 duration-200 hover:bg-stone-950 dark:bg-stone-200 dark:text-stone-950 dark:hover:bg-white"
+          class="mt-2 rounded bg-neutral-700 px-4 py-2 text-neutral-50 duration-200 hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
         >
           Open Eye Dropper
         </button>
