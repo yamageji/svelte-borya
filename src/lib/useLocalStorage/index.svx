@@ -1,6 +1,11 @@
 # useLocalStorage
 
 ## Usage
+```svelte
+<script>
+  import { useLocalStorage } from 'svelte-use';
+</script>
+```
 
 TBA
 

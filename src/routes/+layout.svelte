@@ -8,7 +8,7 @@
 
 <div class="mx-auto grid min-h-svh max-w-screen-lg grid-rows-main">
   <Header />
-  <div class="px-6">
+  <div class="min-w-1 px-6">
     {@render children()}
   </div>
   <Footer />

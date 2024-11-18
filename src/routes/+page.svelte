@@ -2,6 +2,6 @@
   import Guide from './Guide.svx';
 </script>
 
-<main class="h-full pt-10">
+<main class="mt-6 h-full">
   <Guide />
 </main>

@@ -29,7 +29,7 @@
   ];
 </script>
 
-<aside class="w-60 border-r border-neutral-300 pr-4">
+<aside class="h-full overflow-y-auto py-8">
   <h2 class="text-xl font-bold">Functions</h2>
   <ul>
     {#each list as { title, items }}

@@ -2,7 +2,11 @@
 
 ## Usage
 
-TBA
+```svelte
+<script>
+  import { useClipboard } from 'svelte-use';
+</script>
+```
 
 ## Parameters
 

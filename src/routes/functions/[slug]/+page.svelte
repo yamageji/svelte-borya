@@ -94,9 +94,9 @@
   {/if}
 
   {#if Demo}
-    <section class="docs">
+    <section class="demo">
       <h2 class="text-lg font-bold">Demo</h2>
-      <div class="mt-4 rounded-md bg-white p-8 dark:bg-[#1E1E1E]">
+      <div class="mt-4 rounded-md bg-neutral-200 p-8 dark:bg-neutral-800">
         <Demo />
       </div>
     </section>
@@ -104,24 +104,25 @@
 </div>
 
 <style>
-  .docs {
-    :global(h1) {
-      @apply mb-4 text-3xl font-bold;
-    }
-    :global(h2) {
-      @apply mb-3 mt-10 text-lg font-bold;
-    }
-    :global(pre) {
-      @apply w-full overflow-x-auto whitespace-pre rounded-md bg-neutral-100 p-6 text-sm leading-6 dark:bg-neutral-800;
-    }
-    :global(code) {
-      @apply whitespace-pre font-mono;
-    }
-    :global(th) {
-      @apply border border-neutral-300 p-2;
-    }
-    :global(td) {
-      @apply border border-neutral-300 p-2;
-    }
+  :global(.docs h1) {
+    @apply mb-4 text-3xl font-bold;
+  }
+  :global(.docs h2) {
+    @apply mb-3 mt-10 text-lg font-bold;
+  }
+  :global(.docs pre) {
+    @apply overflow-x-auto rounded-md bg-neutral-100 p-6 text-sm leading-6 dark:bg-neutral-800;
+  }
+  :global(.docs code) {
+    @apply whitespace-pre;
+  }
+  :global(.docs table) {
+    @apply w-full;
+  }
+  :global(.docs th) {
+    @apply border border-neutral-500 p-2;
+  }
+  :global(.docs td) {
+    @apply border border-neutral-500 p-2;
   }
 </style>
