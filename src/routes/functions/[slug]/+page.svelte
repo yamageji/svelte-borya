@@ -96,7 +96,7 @@
   {#if Demo}
     <section class="demo">
       <h2 class="text-lg font-bold">Demo</h2>
-      <div class="mt-4 rounded-md bg-neutral-200 p-8 dark:bg-neutral-800">
+      <div class="mt-4 rounded-md bg-neutral-100 p-8 dark:bg-neutral-800">
         <Demo />
       </div>
     </section>
@@ -111,10 +111,13 @@
     @apply mb-3 mt-10 text-lg font-bold;
   }
   :global(.docs pre) {
-    @apply overflow-x-auto rounded-md bg-neutral-100 p-6 text-sm leading-6 dark:bg-neutral-800;
+    @apply overflow-x-auto rounded-md !bg-neutral-100 p-6 text-sm leading-6;
   }
-  :global(.docs code) {
-    @apply whitespace-pre;
+  :global(.dark .docs pre) {
+    @apply !bg-neutral-800;
+  }
+  :global(html.dark .shiki span) {
+    @apply !bg-neutral-800;
   }
   :global(.docs table) {
     @apply w-full;

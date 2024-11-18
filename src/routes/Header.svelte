@@ -1,17 +1,16 @@
 <script lang="ts">
-  let isOpen = $state(false);
+  import Navigation from './Navigation.svelte';
+
   let dialog = $state<HTMLDialogElement>();
   let closeButton = $state<HTMLButtonElement>();
 
   const openMenu = () => {
     if (!dialog) return;
-    isOpen = true;
     dialog.showModal();
   };
 
   const closeMenu = () => {
     if (!dialog) return;
-    isOpen = false;
     dialog.close();
   };
 
@@ -24,7 +23,6 @@
       elRect.left <= event.clientX &&
       event.clientX <= elRect.right;
     if (isInDialog) return;
-    isOpen = false;
     dialog.close();
   };
 </script>
@@ -50,20 +48,27 @@
   <div class="mr-4 lg:hidden">
     <button type="button" onclick={openMenu} class="grid place-content-center">
       <span class="hidden">open menu</span>
-      <span class="iconify size-7 text-neutral-950 mdi--menu"></span>
+      <span class="iconify size-7 text-neutral-950 mdi--menu dark:text-neutral-50"></span>
     </button>
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <dialog
       bind:this={dialog}
       onclick={(event) => closeMenuByBackdrop(event)}
-      class="absolute bottom-auto left-auto right-4 top-4 flex-col gap-4 rounded-md p-2 open:flex"
+      class="absolute bottom-auto left-auto right-0 top-4 max-h-[calc(svh)] min-w-[calc(100%/2)] max-w-full flex-row items-start justify-between gap-10 rounded-md bg-neutral-50 p-6 backdrop:bg-neutral-500/20 backdrop:backdrop-blur-sm open:flex dark:bg-neutral-800"
     >
-      <button type="button" bind:this={closeButton} onclick={closeMenu} class="self-end">
+      <div class="mt-1">
+        <Navigation {closeMenu} />
+      </div>
+      <button
+        type="button"
+        bind:this={closeButton}
+        onclick={closeMenu}
+        class="sticky top-0 grid place-content-center"
+      >
         <span class="hidden">close menu</span>
-        <span class="iconify size-7 text-neutral-950 mdi--close"></span>
+        <span class="iconify size-7 text-neutral-950 mdi--close dark:text-neutral-50"></span>
       </button>
-      <div class="px-4 pb-4">簡易モーダル</div>
     </dialog>
   </div>
 </header>
