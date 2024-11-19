@@ -55,20 +55,26 @@
     <dialog
       bind:this={dialog}
       onclick={(event) => closeMenuByBackdrop(event)}
-      class="absolute bottom-auto left-auto right-0 top-4 max-h-[calc(svh)] min-w-[calc(100%/2)] max-w-full flex-row items-start justify-between gap-10 rounded-md bg-neutral-50 p-6 backdrop:bg-neutral-500/20 backdrop:backdrop-blur-sm open:flex dark:bg-neutral-800"
+      class="absolute inset-0 m-0 h-full max-h-full w-full max-w-full overscroll-y-contain bg-transparent p-0 backdrop:bg-neutral-500/20 backdrop:backdrop-blur-sm dark:bg-neutral-800"
     >
-      <div class="mt-1">
-        <Navigation {closeMenu} />
+      <div class="h-[calc(100%+1px)]">
+        <div
+          class="absolute bottom-auto left-auto right-0 top-0 flex max-h-[calc(svh)] w-fit max-w-full flex-row items-start gap-10 bg-neutral-50 p-6"
+        >
+          <div class="mt-1">
+            <Navigation {closeMenu} />
+          </div>
+          <button
+            type="button"
+            bind:this={closeButton}
+            onclick={closeMenu}
+            class="sticky top-6 grid place-content-center"
+          >
+            <span class="hidden">close menu</span>
+            <span class="iconify size-7 text-neutral-950 mdi--close dark:text-neutral-50"></span>
+          </button>
+        </div>
       </div>
-      <button
-        type="button"
-        bind:this={closeButton}
-        onclick={closeMenu}
-        class="sticky top-0 grid place-content-center"
-      >
-        <span class="hidden">close menu</span>
-        <span class="iconify size-7 text-neutral-950 mdi--close dark:text-neutral-50"></span>
-      </button>
     </dialog>
   </div>
 </header>
