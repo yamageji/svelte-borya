@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { lockscroll } from '@svelte-put/lockscroll';
   import Navigation from './Navigation.svelte';
 
@@ -30,6 +31,19 @@
     dialog.close();
     locked = false;
   };
+
+  const listener = (event: MediaQueryListEvent) => {
+    if (!dialog) return;
+    if (event.matches) {
+      dialog.close();
+      locked = false;
+    }
+  };
+
+  onMount(() => {
+    const mediaQueryList = window.matchMedia('(min-width: 1024px)');
+    mediaQueryList.addEventListener('change', listener);
+  });
 </script>
 
 <header
