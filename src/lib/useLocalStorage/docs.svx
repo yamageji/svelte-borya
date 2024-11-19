@@ -1,4 +1,9 @@
-# useLocalStorage
+---
+title: useLocalStorage
+description: Reactive LocalStorage.
+---
+
+Reactive [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
 ## Usage
 ```svelte

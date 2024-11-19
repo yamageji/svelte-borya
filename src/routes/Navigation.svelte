@@ -1,32 +1,5 @@
 <script lang="ts">
-  const list = [
-    {
-      title: 'State',
-      items: ['useLocalStorage', 'useSessionStorage', 'useStorage']
-    },
-    {
-      title: 'Browser',
-      items: [
-        'useBreakpoints',
-        'useBrowserLocation',
-        'useClipboard',
-        'useClipboardItems',
-        'useColorMode',
-        'useCssVar',
-        'useDark',
-        'useEventListener',
-        'useEyeDropper',
-        'useFavicon',
-        'useMediaQuery',
-        'usePermission',
-        'usePreferredColorScheme',
-        'usePreferredContrast',
-        'usePreferredDark',
-        'usePreferredLanguages',
-        'usePreferredReducedMotion'
-      ]
-    }
-  ];
+  import list from './navigationList.json';
 
   let props = $props();
 </script>

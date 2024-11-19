@@ -1,4 +1,9 @@
-# usePreferredDark
+---
+title: useFavicon
+description: Reactive favicon.
+---
+
+Reactive favicon.
 
 ## Usage
 
@@ -8,6 +13,7 @@ TBA
 
 | Name       | Type       |  Default |
 | :--------- | :--------- | :---------- |
+
 
 ## Options
 

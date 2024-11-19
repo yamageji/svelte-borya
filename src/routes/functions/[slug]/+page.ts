@@ -1,36 +1,23 @@
-import type { EntryGenerator } from './$types';
+import { error } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 
-const slugList = [
-  'useLocalStorage',
-  'useSessionStorage',
-  'useStorage',
-  'useBreakpoints',
-  'useBrowserLocation',
-  'useClipboard',
-  'useClipboardItems',
-  'useColorMode',
-  'useCssVar',
-  'useDark',
-  'useEventListener',
-  'useEyeDropper',
-  'useFavicon',
-  'useMediaQuery',
-  'usePermission',
-  'usePreferredColorScheme',
-  'usePreferredContrast',
-  'usePreferredDark',
-  'usePreferredLanguages',
-  'usePreferredReducedMotion'
-];
-
-export function load({ params }) {
-  return {
-    slug: params.slug
-  };
-}
-
-export const entries: EntryGenerator = () => {
-  return slugList.map((slug) => ({ slug }));
+export const load: PageLoad = async ({ params }) => {
+  try {
+    const docs = await import(`$lib/${params.slug}/docs.svx`);
+    const demo = await import(`$lib/${params.slug}/demo.svelte`);
+    return {
+      docs: {
+        ...docs.metadata,
+        content: docs.default
+      },
+      demo: {
+        ...demo.metadata,
+        content: demo.default
+      }
+    };
+  } catch {
+    throw error(404, 'Not found');
+  }
 };
 
-export const prerender = true;
+// export const prerender = true;

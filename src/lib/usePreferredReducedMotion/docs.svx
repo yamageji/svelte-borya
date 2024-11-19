@@ -1,0 +1,21 @@
+---
+title: usePreferredReducedMotion
+description: Reactive prefers-reduced-motion media query.
+---
+
+Reactive [prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) media query.
+
+## Usage
+
+TBA
+
+## Parameters
+
+| Name       | Type       |  Default |
+| :--------- | :--------- | :---------- |
+
+## Options
+
+```typescript
+
+```

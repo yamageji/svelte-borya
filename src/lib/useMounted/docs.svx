@@ -1,4 +1,9 @@
-# useEventListener
+---
+title: useMounted
+description: Mounted state in ref.
+---
+
+Mounted state in ref.
 
 ## Usage
 
@@ -8,7 +13,6 @@ TBA
 
 | Name       | Type       |  Default |
 | :--------- | :--------- | :---------- |
-
 
 ## Options
 

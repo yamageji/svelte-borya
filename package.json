@@ -1,6 +1,8 @@
 {
   "name": "svelte-borya",
   "version": "0.0.1",
+  "author": "koyama shigehito<https://github.com/yamageji>",
+  "license": "MIT",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",

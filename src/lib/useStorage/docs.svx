@@ -1,0 +1,21 @@
+---
+title: useStorage
+description: Create a reactive ref that can be used to access & modify LocalStorage or SessionStorage.
+---
+
+Create a reactive ref that can be used to access & modify [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) or [SessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage).
+
+## Usage
+
+TBA
+
+## Parameters
+
+| Name       | Type       |  Default |
+| :--------- | :--------- | :---------- |
+
+## Options
+
+```typescript
+
+```

@@ -1,4 +1,9 @@
-# usePreferredContrast
+---
+title: useDark
+description: Reactive dark mode with auto data persistence.
+---
+
+Reactive dark mode with auto data persistence.
 
 ## Usage
 
@@ -8,6 +13,7 @@ TBA
 
 | Name       | Type       |  Default |
 | :--------- | :--------- | :---------- |
+
 
 ## Options
 

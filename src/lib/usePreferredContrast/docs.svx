@@ -1,0 +1,21 @@
+---
+title: usePreferredContrast
+description: Reactive prefers-contrast media query.
+---
+
+Reactive [prefers-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) media query.
+
+## Usage
+
+TBA
+
+## Parameters
+
+| Name       | Type       |  Default |
+| :--------- | :--------- | :---------- |
+
+## Options
+
+```typescript
+
+```

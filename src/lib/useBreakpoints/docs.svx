@@ -1,4 +1,7 @@
-# useBreakpoints
+---
+title: useBreakpoints
+description: Reactive viewport breakpoints.
+---
 
 Reactive viewport breakpoints.
 

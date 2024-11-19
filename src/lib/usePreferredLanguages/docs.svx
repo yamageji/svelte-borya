@@ -1,0 +1,21 @@
+---
+title: usePreferredLanguages
+description: Reactive Navigator Languages.
+---
+
+Reactive [Navigator Languages](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/languages).
+
+## Usage
+
+TBA
+
+## Parameters
+
+| Name       | Type       |  Default |
+| :--------- | :--------- | :---------- |
+
+## Options
+
+```typescript
+
+```

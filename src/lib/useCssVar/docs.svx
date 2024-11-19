@@ -1,6 +1,9 @@
-# useCssVar
+---
+title: useCssVar
+description: Manipulate CSS variables.
+---
 
-Manipulate CSS variables
+Manipulate CSS variables.
 
 ## Usage
 

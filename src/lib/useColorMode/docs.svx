@@ -1,0 +1,21 @@
+---
+title: useColorMode
+description: Reactive color mode (dark / light / customs) with auto data persistence.
+---
+
+Reactive color mode (dark / light / customs) with auto data persistence.
+
+## Usage
+
+TBA
+
+## Parameters
+
+| Name       | Type       |  Default |
+| :--------- | :--------- | :---------- |
+
+## Options
+
+```typescript
+
+```

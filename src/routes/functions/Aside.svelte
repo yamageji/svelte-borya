@@ -1,35 +1,8 @@
 <script lang="ts">
-  const list = [
-    {
-      title: 'State',
-      items: ['useLocalStorage', 'useSessionStorage', 'useStorage']
-    },
-    {
-      title: 'Browser',
-      items: [
-        'useBreakpoints',
-        'useBrowserLocation',
-        'useClipboard',
-        'useClipboardItems',
-        'useColorMode',
-        'useCssVar',
-        'useDark',
-        'useEventListener',
-        'useEyeDropper',
-        'useFavicon',
-        'useMediaQuery',
-        'usePermission',
-        'usePreferredColorScheme',
-        'usePreferredContrast',
-        'usePreferredDark',
-        'usePreferredLanguages',
-        'usePreferredReducedMotion'
-      ]
-    }
-  ];
+  import list from '../navigationList.json';
 </script>
 
-<aside class="h-full overflow-y-auto py-8">
+<aside class="h-full overflow-y-auto pb-8 pt-6">
   <h2 class="text-xl font-bold">Functions</h2>
   <ul>
     {#each list as { title, items }}

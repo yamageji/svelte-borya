@@ -1,4 +1,9 @@
-# usePreferredReducedMotion
+---
+title: usePreferredDark
+description: Reactive dark theme preference.
+---
+
+Reactive dark theme preference.
 
 ## Usage
 

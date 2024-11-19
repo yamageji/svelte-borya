@@ -1,6 +1,9 @@
-# useBrowserLocation
+---
+title: useBrowserLocation
+description: Reactive browser location.
+---
 
-Reactive browser location
+Reactive browser location.
 
 ## Usage
 
