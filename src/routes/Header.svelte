@@ -74,7 +74,7 @@
     <dialog
       bind:this={dialog}
       onclick={(event) => closeMenuByBackdrop(event)}
-      class="absolute bottom-auto left-auto right-0 top-4 max-h-[calc(svh)] min-w-[calc(100%/2)] max-w-full flex-row items-start justify-between gap-10 rounded-md bg-neutral-50 p-6 backdrop:bg-neutral-500/20 backdrop:backdrop-blur-sm open:flex dark:bg-neutral-800"
+      class="absolute bottom-auto left-auto right-2 top-2 max-h-[calc(svh)] max-w-full flex-row items-start justify-between gap-10 rounded-md bg-neutral-50 p-6 backdrop:bg-neutral-500/20 backdrop:backdrop-blur-sm open:flex dark:bg-neutral-800"
     >
       <div class="mt-1">
         <Navigation {closeMenu} />
