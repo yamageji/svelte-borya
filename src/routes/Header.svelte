@@ -7,10 +7,14 @@
   let closeButton = $state<HTMLButtonElement>();
   let locked = $state(false);
 
+  let tabbableElements: NodeListOf<HTMLElement> | undefined;
+  let firstTabbable: HTMLElement | undefined;
+
   const openMenu = () => {
     if (!dialog) return;
     dialog.showModal();
     locked = true;
+    if (firstTabbable) firstTabbable.focus();
   };
 
   const closeMenu = () => {
@@ -32,6 +36,7 @@
     locked = false;
   };
 
+  // メディアクエリの変更を監視してダイアログを閉じる
   const listener = (event: MediaQueryListEvent) => {
     if (!dialog) return;
     if (event.matches) {
@@ -43,6 +48,12 @@
   onMount(() => {
     const mediaQueryList = window.matchMedia('(min-width: 1024px)');
     mediaQueryList.addEventListener('change', listener);
+  });
+
+  // ドロワーのフォーカス制御
+  onMount(() => {
+    tabbableElements = dialog?.querySelectorAll('a[href], button:not(:disabled)');
+    firstTabbable = tabbableElements ? tabbableElements[0] : undefined;
   });
 </script>
 
