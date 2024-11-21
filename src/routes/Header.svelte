@@ -9,12 +9,12 @@
 
   let tabbableElements: NodeListOf<HTMLElement> | undefined;
   let firstTabbable: HTMLElement | undefined;
+  let lastTabbable: HTMLElement | undefined;
 
   const openMenu = () => {
     if (!dialog) return;
     dialog.showModal();
     locked = true;
-    if (firstTabbable) firstTabbable.focus();
   };
 
   const closeMenu = () => {
@@ -23,7 +23,7 @@
     locked = false;
   };
 
-  const closeMenuByBackdrop = (event: MouseEvent) => {
+  const closeMenuOnBackdropClick = (event: MouseEvent) => {
     if (!dialog) return;
     const elRect = dialog.getBoundingClientRect();
     const isInDialog =
@@ -36,8 +36,23 @@
     locked = false;
   };
 
-  // メディアクエリの変更を監視してダイアログを閉じる
-  const listener = (event: MediaQueryListEvent) => {
+  const onKeydownTabKeyFirstTabbable = (event: KeyboardEvent) => {
+    if (!lastTabbable || event.key !== 'Tab' || !event.shiftKey) {
+      return;
+    }
+    event.preventDefault();
+    lastTabbable.focus();
+  };
+
+  const onKeydownTabKeyLastTabbable = (event: KeyboardEvent) => {
+    if (!firstTabbable || event.key !== 'Tab' || event.shiftKey) {
+      return;
+    }
+    event.preventDefault();
+    firstTabbable.focus();
+  };
+
+  const handleMediaQueryChange = (event: MediaQueryListEvent) => {
     if (!dialog) return;
     if (event.matches) {
       dialog.close();
@@ -46,14 +61,17 @@
   };
 
   onMount(() => {
-    const mediaQueryList = window.matchMedia('(min-width: 1024px)');
-    mediaQueryList.addEventListener('change', listener);
-  });
-
-  // ドロワーのフォーカス制御
-  onMount(() => {
+    // Focus control for the drawer
     tabbableElements = dialog?.querySelectorAll('a[href], button:not(:disabled)');
-    firstTabbable = tabbableElements ? tabbableElements[0] : undefined;
+    if (!tabbableElements) return;
+    firstTabbable = tabbableElements[0];
+    lastTabbable = tabbableElements[tabbableElements.length - 1];
+    firstTabbable.addEventListener('keydown', onKeydownTabKeyFirstTabbable, false);
+    lastTabbable.addEventListener('keydown', onKeydownTabKeyLastTabbable, false);
+
+    // Watch for media query changes to close the dialog
+    const mediaQueryList = window.matchMedia('(min-width: 1024px)');
+    mediaQueryList.addEventListener('change', handleMediaQueryChange);
   });
 </script>
 
@@ -65,8 +83,8 @@
     class="flex items-center gap-1.5 rounded-full bg-neutral-50 px-4 py-2 text-2xl font-bold dark:bg-neutral-900"
   >
     <img src="/logo_beta.svg" alt="" class="size-12" />
-    SvelteBorya</a
-  >
+    SvelteBorya
+  </a>
 
   <nav
     class="hidden items-center gap-4 rounded-full bg-neutral-50 px-4 lg:flex dark:bg-neutral-900"
@@ -88,7 +106,7 @@
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <dialog
       bind:this={dialog}
-      onclick={(event) => closeMenuByBackdrop(event)}
+      onclick={(event) => closeMenuOnBackdropClick(event)}
       class="absolute bottom-auto left-auto right-2 top-2 max-h-[calc(svh)] max-w-full flex-row items-start justify-between gap-10 rounded-md bg-neutral-50 p-6 backdrop:bg-neutral-500/20 backdrop:backdrop-blur-sm open:flex dark:bg-neutral-800"
     >
       <div class="mt-1">
