@@ -4,7 +4,7 @@
   let { children } = $props();
 </script>
 
-<div class="mt-8">
+<div class="pt-4">
   <div
     class="fixed inset-0 left-[max(24px,calc(50%-488px))] right-auto top-[calc(64px+14px)] z-20 hidden w-60 overflow-y-auto lg:block"
   >

@@ -2,7 +2,7 @@
   import list from '../navigationList.json';
 </script>
 
-<aside class="h-full overflow-y-auto pb-8 pt-6">
+<aside class="h-full overflow-y-auto pb-8 pt-5">
   <h2 class="text-xl font-bold">Functions</h2>
   <ul>
     {#each list as { title, items }}

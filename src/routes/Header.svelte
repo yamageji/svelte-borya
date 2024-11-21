@@ -80,9 +80,9 @@
 >
   <a
     href="/"
-    class="flex items-center gap-1.5 rounded-full bg-neutral-50 px-4 py-2 text-2xl font-bold dark:bg-neutral-900"
+    class="flex items-center gap-1 rounded-full bg-neutral-50 py-2 pl-1 pr-4 text-2xl font-bold dark:bg-neutral-900"
   >
-    <img src="/logo_beta.svg" alt="" class="size-12" />
+    <img src="/logo_beta.svg" alt="" class="size-10" />
     SvelteBorya
   </a>
 
