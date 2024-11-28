@@ -13,14 +13,12 @@
 </script>
 
 <div class="flex flex-col gap-8">
-  <section class="docs">
+  <div class="mb-2">
     <h1 class="mb-4 text-3xl font-bold">
       {data.docs?.title}
     </h1>
-    {#if Docs}
-      <Docs />
-    {/if}
-  </section>
+    <p>{data.docs.description}</p>
+  </div>
 
   <section class="demo">
     <h2 class="text-lg font-bold">Demo</h2>
@@ -29,6 +27,12 @@
         <Demo />
       {/if}
     </div>
+  </section>
+
+  <section class="docs">
+    {#if Docs}
+      <Docs />
+    {/if}
   </section>
 </div>
 

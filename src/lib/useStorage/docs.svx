@@ -3,11 +3,28 @@ title: useStorage
 description: Create a reactive ref that can be used to access & modify LocalStorage or SessionStorage.
 ---
 
-Create a reactive ref that can be used to access & modify [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) or [SessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage).
-
 ## Usage
 
-TBA
+```ts
+import { useStorage } from 'svelte-borya'
+
+// bind object
+const state = useStorage('my-store', { hello: 'hi', greeting: 'Hello' })
+
+// bind boolean
+const flag = useStorage('my-flag', true)
+console.log(flag.value) // true 
+
+// bind number
+const count = useStorage('my-count', 0)
+console.log(count.value) // 0
+
+// bind string with SessionStorage
+const id = useStorage('my-id', 'some-string-id', sessionStorage)
+
+// delete data from storage
+state.value = null
+```
 
 ## Parameters
 
@@ -17,5 +34,14 @@ TBA
 ## Options
 
 ```typescript
-
+export interface UseStorageOptions<T> extends ConfigurableEventFilter, ConfigurableWindow {
+  deep?: boolean;
+  listenToStorageChanges?: boolean;
+  writeDefaults?: boolean;
+  mergeDefaults?: boolean | ((storageValue: T, defaults: T) => T);
+  serializer?: Serializer<T>;
+  onError?: (error: unknown) => void;
+  shallow?: boolean;
+  initOnMounted?: boolean;
+}
 ```
