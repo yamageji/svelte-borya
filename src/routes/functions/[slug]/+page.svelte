@@ -12,7 +12,7 @@
   });
 </script>
 
-<div class="">
+<div>
   <div class="mb-2">
     <h1 class="mb-4 text-3xl font-bold">
       {data.docs?.title}

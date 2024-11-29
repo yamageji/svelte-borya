@@ -19,5 +19,5 @@ module.exports = {
     }
   },
 
-  plugins: [containerQueries, aspectRatio, addIconSelectors(['mdi'])]
+  plugins: [containerQueries, aspectRatio, addIconSelectors(['mdi', 'heroicons'])]
 } as Config;

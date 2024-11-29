@@ -1,4 +1,5 @@
 <script lang="ts">
+  import NavigationUtilItems from './NavigationUtilItems.svelte';
   import list from './navigationList.json';
 
   let props = $props();
