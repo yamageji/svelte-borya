@@ -61,4 +61,7 @@
   :global(.docs a) {
     @apply underline;
   }
+  :global(.docs p) {
+    @apply mt-4;
+  }
 </style>

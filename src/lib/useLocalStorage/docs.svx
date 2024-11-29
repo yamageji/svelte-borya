@@ -3,24 +3,36 @@ title: useLocalStorage
 description: Reactive LocalStorage.
 ---
 
-Reactive [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
-
 ## Usage
-```svelte
-<script>
-  import { useLocalStorage } from 'svelte-use';
-</script>
+
+```ts
+import { useLocalStorage } from 'svelte-borya'
+
+// bind boolean
+const flag = useLocalStorage('my-flag', true)
+console.log(flag.value) // true 
 ```
 
-TBA
+Please refer to [useStorage](/functions/useStorage).
 
 ## Parameters
 
 | Name       | Type       |  Default |
 | :--------- | :--------- | :---------- |
+| key        | `string`     | `-`          |
+| initialValue | `MaybeGetter<T>` | `-`          |
+| options    | `UseStorageOptions<T>` | `{}`          |
 
 ## Options
 
 ```typescript
-
+export interface UseStorageOptions<T> extends ConfigurableEventFilter, ConfigurableWindow {
+  listenToStorageChanges?: boolean;
+  writeDefaults?: boolean;
+  mergeDefaults?: boolean | ((storageValue: T, defaults: T) => T);
+  serializer?: Serializer<T>;
+  onError?: (error: unknown) => void;
+  shallow?: boolean;
+  initOnMounted?: boolean;
+}
 ```
