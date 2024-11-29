@@ -1,21 +1,24 @@
 <script lang="ts">
-  import { useDark } from '$lib/useDark/index.svelte';
+  import { useColorMode } from '$lib/useColorMode/index.svelte';
 
-  const isDark = useDark();
+  const mode = useColorMode();
+  const toggleMode = () => {
+    if (mode.value === 'light') {
+      mode.value = 'dark';
+    } else {
+      mode.value = 'light';
+    }
+  };
 </script>
 
 <div class="flex gap-1 lg:pl-2">
-  <button
-    type="button"
-    onclick={() => (isDark.value = !isDark.value)}
-    class="grid size-10 place-content-center"
-  >
-    {#if isDark.value}
+  <button type="button" onclick={toggleMode} class="grid size-10 place-content-center">
+    {#if mode.value === 'dark'}
       <span class="hidden">moon</span>
-      <span class="heroicons--moon-solid iconify size-5 dark:text-neutral-50"></span>
+      <span class="iconify size-5 heroicons--moon-solid dark:text-neutral-50"></span>
     {:else}
       <span class="hidden">sun</span>
-      <span class="heroicons--sun-solid iconify size-5 text-neutral-700"></span>
+      <span class="iconify size-5 text-neutral-700 heroicons--sun-solid"></span>
     {/if}
   </button>
 
