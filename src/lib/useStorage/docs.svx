@@ -1,6 +1,6 @@
 ---
 title: useStorage
-description: Create a reactive ref that can be used to access & modify LocalStorage or SessionStorage.
+description: Reactive Storage. Uses localStorage by default, other storage sources be specified via third argument.
 ---
 
 ## Usage
@@ -9,7 +9,7 @@ description: Create a reactive ref that can be used to access & modify LocalStor
 import { useStorage } from 'svelte-borya'
 
 // bind object
-const state = useStorage('my-store', { hello: 'hi', greeting: 'Hello' })
+ const state = useStorage('my-store', { greeting: 'Hello', name: 'SvelteBorya' });
 
 // bind boolean
 const flag = useStorage('my-flag', true)
@@ -21,21 +21,21 @@ console.log(count.value) // 0
 
 // bind string with SessionStorage
 const id = useStorage('my-id', 'some-string-id', sessionStorage)
-
-// delete data from storage
-state.value = null
 ```
 
 ## Parameters
 
 | Name       | Type       |  Default |
 | :--------- | :--------- | :---------- |
+| key        | `string`     | `-`          |
+| defaults   | `MaybeGetter<T>` | `-`       |
+| storage    | `StorageLike` | `localStorage` |
+| options    | `UseStorageOptions<T>` | `{}` |
 
 ## Options
 
 ```typescript
 export interface UseStorageOptions<T> extends ConfigurableEventFilter, ConfigurableWindow {
-  deep?: boolean;
   listenToStorageChanges?: boolean;
   writeDefaults?: boolean;
   mergeDefaults?: boolean | ((storageValue: T, defaults: T) => T);

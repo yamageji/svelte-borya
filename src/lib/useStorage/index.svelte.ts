@@ -67,7 +67,6 @@ export interface StorageEventLike {
 }
 
 export interface UseStorageOptions<T> extends ConfigurableEventFilter, ConfigurableWindow {
-  deep?: boolean;
   listenToStorageChanges?: boolean;
   writeDefaults?: boolean;
   mergeDefaults?: boolean | ((storageValue: T, defaults: T) => T);
@@ -152,7 +151,6 @@ export function useStorage<T extends string | number | boolean | object | null>(
     });
   }
 
-  // avoid reading immediately to avoid hydration mismatch when doing SSR
   if (!initOnMounted) update();
 
   function dispatchWriteEvent(oldValue: string | null, newValue: string | null) {
@@ -238,8 +236,8 @@ export function useStorage<T extends string | number | boolean | object | null>(
     get value() {
       return data;
     },
-    set value(v: T) {
-      data = v;
+    set value(value) {
+      data = value;
     }
   };
 }
