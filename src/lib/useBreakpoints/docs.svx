@@ -18,7 +18,7 @@ const betweenSmMd = breakpoints.between('sm', 'md');
 const greaterMd = breakpoints.greater('md');
 ```
 
-## Type Declarations
+## Type
 ```typescript
 export function useBreakpoints<K extends string>(
   breakpoints: Breakpoints<K>,

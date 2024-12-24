@@ -33,8 +33,7 @@ export function useSessionStorage<T extends string | number | boolean | object |
   key: string,
   initialValue: MaybeGetter<T>,
   options: UseStorageOptions<T> = {}
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): { value: any } {
+): { value: T } {
   const { window = defaultWindow } = options;
   return useStorage(key, initialValue, window?.sessionStorage, options);
 }

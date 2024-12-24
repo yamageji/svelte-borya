@@ -33,8 +33,7 @@ export function useLocalStorage<T extends string | number | boolean | object | n
   key: string,
   initialValue: MaybeGetter<T>,
   options: UseStorageOptions<T> = {}
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): { value: any } {
+): { value: T } {
   const { window = defaultWindow } = options;
   return useStorage(key, initialValue, window?.localStorage, options);
 }

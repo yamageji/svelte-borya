@@ -13,26 +13,13 @@ const flag = useSessionStorage('my-flag', true)
 console.log(flag.value) // true 
 ```
 
-Please refer to [useStorage](/functions/useStorage).
-
-## Parameters
-
-| Name       | Type       |  Default |
-| :--------- | :--------- | :---------- |
-| key        | `string`     | `-`          |
-| initialValue | `MaybeGetter<T>` | `-`          |
-| options    | `UseStorageOptions<T>` | `{}`          |
-
-## Options
-
-```typescript
-export interface UseStorageOptions<T> extends ConfigurableEventFilter, ConfigurableWindow {
-  listenToStorageChanges?: boolean;
-  writeDefaults?: boolean;
-  mergeDefaults?: boolean | ((storageValue: T, defaults: T) => T);
-  serializer?: Serializer<T>;
-  onError?: (error: unknown) => void;
-  shallow?: boolean;
-  initOnMounted?: boolean;
-}
+## Type
+```ts
+export function useSessionStorage<T>(
+  key: string,
+  initialValue: MaybeGetter<T>,
+  options: UseStorageOptions<T> = {}
+): { value: T } 
 ```
+
+Please refer to [useStorage](/functions/useStorage).
