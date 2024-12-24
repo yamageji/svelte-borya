@@ -15,7 +15,6 @@
 </div>
 <div>
   <p>trigger: {location.trigger}</p>
-  <p>state: {location.state}</p>
   <p>length: {location.length}</p>
   <p>origin: {location.origin}</p>
   <p>hash: {location.hash}</p>

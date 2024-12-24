@@ -21,6 +21,12 @@ export interface BrowserLocationState {
 export function useBrowserLocation(options: ConfigurableWindow = {}) {
   const { window = defaultWindow } = options;
 
+  let trigger = $state<string>('');
+
+  let state = $state<BrowserLocationState>(window?.history?.state || {});
+  let length = $state<number | undefined>(window?.history?.length || 0);
+  let origin = $state<string | undefined>(window?.location?.origin);
+
   let hash = $state<string | undefined>('');
   let host = $state<string | undefined>('');
   let hostname = $state<string | undefined>('');
@@ -63,10 +69,12 @@ export function useBrowserLocation(options: ConfigurableWindow = {}) {
     window.location['search'] = search;
   });
 
-  const buildState = (trigger: string): BrowserLocationState => {
-    const { state, length } = window?.history || {};
-    const { origin } = window?.location || {};
+  const buildState = (_trigger: string): BrowserLocationState => {
+    trigger = _trigger;
 
+    state = window?.history?.state || {};
+    length = window?.history?.length;
+    origin = window?.location?.origin;
     hash = window?.location?.hash;
     host = window?.location?.host;
     hostname = window?.location?.hostname;
@@ -149,18 +157,18 @@ export function useBrowserLocation(options: ConfigurableWindow = {}) {
     };
   };
 
-  let state = $state(buildState('load'));
+  let value = $state(buildState('load'));
 
   if (window) {
-    useEventListener(window, 'popstate', () => (state = buildState('popstate')), {
+    useEventListener(window, 'popstate', () => (value = buildState('popstate')), {
       passive: true
     });
-    useEventListener(window, 'hashchange', () => (state = buildState('hashchange')), {
+    useEventListener(window, 'hashchange', () => (value = buildState('hashchange')), {
       passive: true
     });
   }
 
-  return state;
+  return value;
 }
 
 export type UseBrowserLocationReturn = ReturnType<typeof useBrowserLocation>;
