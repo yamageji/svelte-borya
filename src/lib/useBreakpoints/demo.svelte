@@ -3,31 +3,19 @@
 
   const breakpoints = useBreakpoints(breakpointsTailwind);
 
-  const smWidth = breakpointsTailwind.sm;
-
-  let reactiveStuff = $state<keyof typeof breakpointsTailwind>('sm');
-  let isGreaterThanBreakpoint = $derived(breakpoints.greaterOrEqual(reactiveStuff));
-
   const current = breakpoints.current();
   const active = breakpoints.active();
-  const xs = breakpoints.smaller('sm');
-  const xse = breakpoints.smallerOrEqual('sm');
-  const sm = breakpoints.between('sm', 'md');
-  const md = breakpoints.between('md', 'lg');
-  const lg = breakpoints.between('lg', 'xl');
-  const xl = breakpoints.between('xl', '2xl');
-  const xxl = breakpoints.greater('2xl');
+  const smallerSm = breakpoints.smaller('sm');
+  const smallerOrEqualSm = breakpoints.smallerOrEqual('sm');
+  const betweenSmMd = breakpoints.between('sm', 'md');
+  const greaterMd = breakpoints.greater('md');
 </script>
 
-<div>
-  <div>Current breakpoints: {current.value}</div>
+<div class="flex flex-col gap-2">
+  <div>Current breakpoints: [{current.value}]</div>
   <div>Active breakpoint: {active.value}</div>
-  <div>xs(&lt;{smWidth}px): {xs.value}</div>
-  <div>xs(&lt;={smWidth}px): {xse.value}</div>
-  <div>sm: {sm.value}</div>
-  <div>md: {md.value}</div>
-  <div>lg: {lg.value}</div>
-  <div>xl: {xl.value}</div>
-  <div>2xl: {xxl.value}</div>
-  <div>greaterThanBreakPoint: {isGreaterThanBreakpoint.value}</div>
+  <div>smaller('sm'): {smallerSm.value}</div>
+  <div>smallerOrEqual('sm'): {smallerOrEqualSm.value}</div>
+  <div>between('sm', 'md'): {betweenSmMd.value}</div>
+  <div>greater('md'): {greaterMd.value}</div>
 </div>

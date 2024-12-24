@@ -1,7 +1,6 @@
 import type { ConfigurableWindow } from '$lib/_configurable';
 import type { MaybeGetter } from '$lib/shared';
 import { increaseWithUnit, toValue } from '$lib/shared';
-import { defaultWindow } from '$lib/_configurable';
 import { useMediaQuery } from '$lib/useMediaQuery/index.svelte';
 
 export * from './breakpoints';
@@ -15,7 +14,7 @@ export interface UseBreakpointsOptions extends ConfigurableWindow {
 export function useBreakpoints<K extends string>(
   breakpoints: Breakpoints<K>,
   options: UseBreakpointsOptions = {}
-) {
+): UseBreakpointsReturn<K> {
   function getValue(k: MaybeGetter<K>, delta?: number) {
     let v = toValue(breakpoints[toValue(k)]);
 
@@ -25,12 +24,7 @@ export function useBreakpoints<K extends string>(
     return v;
   }
 
-  const { window = defaultWindow, strategy = 'min-width' } = options;
-
-  function match(query: string): boolean {
-    if (!window) return false;
-    return window.matchMedia(query).matches;
-  }
+  const { strategy = 'min-width' } = options;
 
   const greaterOrEqual = (k: MaybeGetter<K>) => {
     return useMediaQuery(() => `(min-width: ${getValue(k)})`, options);
@@ -89,37 +83,17 @@ export function useBreakpoints<K extends string>(
         options
       );
     },
-    isGreater(k: K) {
-      return match(`(min-width: ${getValue(k, 0.1)})`);
-    },
-    isGreaterOrEqual(k: K) {
-      return match(`(min-width: ${getValue(k)})`);
-    },
-    isSmaller(k: K) {
-      return match(`(max-width: ${getValue(k, -0.1)})`);
-    },
-    isSmallerOrEqual(k: K) {
-      return match(`(max-width: ${getValue(k)})`);
-    },
-    isInBetween(a: K, b: K) {
-      return match(`(min-width: ${getValue(a)}) and (max-width: ${getValue(b, -0.1)})`);
-    },
     current,
     active
   });
 }
 
 export type UseBreakpointsReturn<K extends string = string> = {
-  greater: (k: K) => boolean;
-  greaterOrEqual: (k: K) => boolean;
-  smaller: (k: K) => boolean;
-  smallerOrEqual: (k: K) => boolean;
-  between: (a: K, b: K) => boolean;
-  isGreater: (k: K) => boolean;
-  isGreaterOrEqual: (k: K) => boolean;
-  isSmaller: (k: K) => boolean;
-  isSmallerOrEqual: (k: K) => boolean;
-  isInBetween: (a: K, b: K) => boolean;
-  current: () => string[];
-  active: string;
+  greaterOrEqual: (k: K) => { value: boolean };
+  smallerOrEqual: (k: K) => { value: boolean };
+  greater(k: K): { value: boolean };
+  smaller(k: K): { value: boolean };
+  between(a: K, b: K): { value: boolean };
+  current: () => { value: string[] };
+  active(): { value: string | undefined };
 } & Record<K, boolean>;

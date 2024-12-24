@@ -3,23 +3,41 @@ title: useBreakpoints
 description: Reactive viewport breakpoints.
 ---
 
-Reactive viewport breakpoints.
-
 ## Usage
 
-TBA
+```ts
+import { breakpointsTailwind, useBreakpoints } from 'svelte-borya';
 
-## Parameters
+const breakpoints = useBreakpoints(breakpointsTailwind);
 
-| Name       | Type       |  Default |
-| :--------- | :--------- | :---------- |
-| breakpoints | `Breakpoints<K>` | `-` |
-| options | `UseBreakpointsOptions` | `{}` |
+const current = breakpoints.current();
+const active = breakpoints.active();
+const smallerSm = breakpoints.smaller('sm');
+const smallerOrEqualSm = breakpoints.smallerOrEqual('sm');
+const betweenSmMd = breakpoints.between('sm', 'md');
+const greaterMd = breakpoints.greater('md');
+```
 
-## Options
-
+## Type Declarations
 ```typescript
+export function useBreakpoints<K extends string>(
+  breakpoints: Breakpoints<K>,
+  options: UseBreakpointsOptions = {}
+): UseBreakpointsReturn<K>;
+
+export type Breakpoints<K extends string = string> = Record<K, number | string>;
+
 export interface UseBreakpointsOptions extends ConfigurableWindow {
   strategy?: 'min-width' | 'max-width'; // default 'min-width'
 }
+
+export type UseBreakpointsReturn<K extends string = string> = {
+  greaterOrEqual: (k: K) => { value: boolean };
+  smallerOrEqual: (k: K) => { value: boolean };
+  greater(k: K): { value: boolean };
+  smaller(k: K): { value: boolean };
+  between(a: K, b: K): { value: boolean };
+  current: () => { value: string[] };
+  active(): { value: string | undefined };
+} & Record<K, boolean>;
 ```
